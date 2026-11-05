@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>잠시 쉬기</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:14px}
+.tog{width:48px;height:28px;border-radius:14px;background:#1F1F1F;position:relative;border:0;flex-shrink:0;margin-left:auto}
+.tog span{position:absolute;top:3px;left:23px;width:22px;height:22px;border-radius:11px;background:#fff}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid #D6D6D2;border-radius:18px;background:#fff;font-size:13px;font-family:inherit;color:#1F1F1F}
+.on{background:#1F1F1F;color:#fff;border-color:#1F1F1F}
+.lab{font-size:13px;font-weight:700}
+.li{display:flex;gap:8px;font-size:14px;line-height:21px;color:#3F3F3F}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="ME04.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span class="tt">잠시 쉬기</span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 8px 20px 16px">
+    <div class="card" style="display: flex; align-items: center; padding: 16px"><span style="font-size: 16px; font-weight: 500">잠시 쉬기</span><button type="button" role="switch" aria-checked="true" aria-label="잠시 쉬기" class="tog"><span></span></button></div>
+    <div style="display: flex; flex-direction: column; gap: 6px"><span class="li"><span aria-hidden="true">·</span>새 첫 편지를 받지 않고, 친구 찾기에서 빠져요</span><span class="li"><span aria-hidden="true">·</span>지금 친구들과는 계속 읽고 쓸 수 있어요</span><span class="li"><span aria-hidden="true">·</span>이유는 묻지 않아요</span></div>
+    <span class="lab" style="margin-top: 6px">돌아올 때 (선택)</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" class="chip">정하지 않음</button><button type="button" class="chip on">3일 뒤</button><button type="button" class="chip">1주 뒤</button><button type="button" class="chip">2주 뒤</button></div>
+    <span class="lab" style="margin-top: 6px">친구에게 이렇게 보여요</span>
+    <div class="card" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px"><span style="width: 36px; height: 36px; border-radius: 18px; background: #D9D9D5"></span><span style="display: flex; flex-direction: column"><b style="font-size: 14px">지윤</b><span style="font-size: 13px; color: #5E5E5E">편지 교류를 쉬고 있어요 · 11월 7일쯤 돌아와요</span></span></div>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn" href="ME04.dc.html">저장</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

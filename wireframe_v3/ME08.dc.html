@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>밍팔 플러스</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.t{width:100%;border-collapse:collapse;font-size:14px}
+.t th,.t td{padding:12px 10px;border-bottom:1px solid #E8E8E4;text-align:left;vertical-align:top}
+.t th{font-size:12px;color:#5E5E5E;font-weight:500}
+.t td:first-child{color:#3F3F3F}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="ME01.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 4px 20px 16px">
+    <h1 style="margin: 0; font-size: 26px; font-weight: 700">밍팔 플러스</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 23px; color: #3F3F3F">편지는 언제나 무료예요. 플러스는 실수하지 않게 도와주는 도구를 넓혀 줘요.</p>
+    <div style="background: #fff; border: 1px solid #E2E2DE; border-radius: 14px; padding: 4px 6px">
+      <table class="t"><thead><tr><th scope="col"></th><th scope="col">무료</th><th scope="col">플러스</th></tr></thead><tbody>
+        <tr><td>편지 읽기·쓰기</td><td>무제한</td><td>무제한</td></tr>
+        <tr><td>읽기 도움 (뜻 보기·영어로는?)</td><td>무제한</td><td>무제한</td></tr>
+        <tr><td>쓰기 도움 (표현 찾기·다듬기)</td><td>하루 10회<br><span style="font-size: 12px; color: #5E5E5E">첫 편지 3통은 제외</span></td><td>넉넉히</td></tr>
+        <tr><td>나만 보는 첨삭</td><td>고칠 곳 1개</td><td>최대 3개 + 이유</td></tr>
+        <tr><td style="border-bottom: 0">표현장</td><td style="border-bottom: 0">100개</td><td style="border-bottom: 0">무제한</td></tr>
+      </tbody></table>
+    </div>
+    <p style="margin: 0; font-size: 15px; font-weight: 700">월 [가격 미정]</p>
+    <p style="margin: 0; font-size: 12px; color: #5E5E5E">언제든 해지할 수 있어요. 베타 기간에는 모든 기능이 무료예요.</p>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn" href="#">플러스 시작하기</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

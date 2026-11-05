@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>교류 종료</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.li{display:flex;gap:8px;font-size:14px;line-height:21px;color:#3F3F3F}
+.foot{padding:12px 20px 34px;display:flex;gap:8px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+.btn2{flex:1;display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#1F1F1F;border:1px solid #1F1F1F;border-radius:12px;font-size:15px;text-decoration:none}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="MB05.dc.html" aria-label="닫기"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></a></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px; padding: 8px 20px 16px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">Oliver와의 편지를<br>마칠까요?</h1>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px">
+      <span class="li"><span aria-hidden="true">·</span>두 사람 모두 새 편지를 보낼 수 없어요</span>
+      <span class="li"><span aria-hidden="true">·</span>지금까지의 편지는 읽을 수만 있게 남아요</span>
+      <span class="li"><span aria-hidden="true">·</span>이미 보낸 편지는 되돌려지지 않아요</span>
+      <span class="li"><span aria-hidden="true">·</span>Oliver에게는 “이 교류는 종료되었어요”라고만 알려요</span>
+      <span class="li"><span aria-hidden="true">·</span>7일 안에는 종료를 취소할 수 있어요. 그 뒤에는 다시 편지를 보낼 수 없어요</span>
+    </div>
+    <label for="bye" style="font-size: 13px; font-weight: 700">마지막 인사 (선택)</label>
+    <textarea id="bye" placeholder="Thank you for all the letters. Take care!" style="resize: none; height: 96px; box-sizing: border-box; padding: 12px 14px; border: 1px solid #D6D6D2; border-radius: 12px; background: #fff; font-family: inherit; font-size: 14px; line-height: 21px"></textarea>
+    <p style="margin: 0; font-size: 12px; color: #5E5E5E">연락을 막고 싶다면 차단을, 불편한 내용이 있었다면 신고를 써 주세요.</p>
+  </div>
+  <div class="foot"><a class="btn2" href="MB05.dc.html">취소</a><a class="btn" href="RL03.dc.html">교류 종료</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>일상 메모</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.m{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-bottom:1px solid #E8E8E4}
+.m:last-child{border-bottom:0}
+.m span{font-size:14px;line-height:20px}
+.m small{font-size:12px;color:#5E5E5E}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #8F8F8B; color: #1F1F1F; font-family: 'Noto Sans KR', sans-serif; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden">
+  <div aria-hidden="true" style="flex-grow: 1; padding: 60px 20px 0; color: #4A4A47; font-size: 13px">우편함 (뒤에 흐리게)</div>
+  <section aria-label="일상 메모" style="height: 600px; box-sizing: border-box; background: #FFFFFF; border-radius: 20px 20px 0 0; display: flex; flex-direction: column; gap: 14px; padding: 8px 20px 34px">
+    <div aria-hidden="true" style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #C8C8C4"></div>
+    <div style="display: flex; align-items: center"><b style="font-size: 18px">일상 메모</b><a href="Main.dc.html" aria-label="닫기" style="margin-left: auto; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></a></div>
+    <p style="margin: 0; font-size: 13px; line-height: 20px; color: #3F3F3F">편지에 쓸 만한 순간을 한두 줄 남겨 두세요. 한국어로 적어도 돼요. 편지를 쓸 때 ‘일상 메모’ 카드로 올라와요.</p>
+    <label for="memo" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">메모</label>
+    <textarea id="memo" value="{{memo}}" readOnly="{{yes}}" style="resize: none; height: 96px; box-sizing: border-box; padding: 12px 14px; border: 2px solid #1F1F1F; border-radius: 12px; font-family: inherit; font-size: 16px; line-height: 24px; color: #1F1F1F"></textarea>
+    <div style="display: flex; gap: 8px">
+      <button type="button" style="display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; border: 1.5px dashed #5E5E5E; border-radius: 10px; background: #fff; font-family: inherit; font-size: 13px; color: #1F1F1F">영어로 표현 찾기 <span style="font-size: 12px; padding: 0 6px; height: 20px; display: inline-flex; align-items: center; border-radius: 3px; font-weight: 500; border: 1px dashed #5E5E5E; color: #5E5E5E">AI</span></button>
+      <button type="button" style="margin-left: auto; min-height: 44px; padding: 0 20px; border: 0; border-radius: 10px; background: #1F1F1F; color: #fff; font-family: inherit; font-size: 15px; font-weight: 700">남기기</button>
+    </div>
+    <span style="font-size: 12px; letter-spacing: 0.06em; color: #5E5E5E; font-weight: 500">이번 주</span>
+    <div style="background: #F4F4F2; border-radius: 12px">
+      <div class="m"><span>일요일마다 엄마랑 시장에 감. 별거 아닌데 제일 집 같음</span><small>11월 2일 · 아직 편지에 안 씀</small></div>
+      <div class="m"><span>Found a tiny café with only four tables near work.</span><small>10월 31일 · Lena에게 쓴 편지에 넣음</small></div>
+    </div>
+    <span style="font-size: 13px; color: #5E5E5E">메모는 나만 봐요. AI로 가는 것은 표현 찾기를 누른 문장뿐이에요.</span>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return { yes: true, memo: "퇴근길에 처음 가 본 골목으로 돌아왔다" }; } }
+</script>
+</body>
+</html>

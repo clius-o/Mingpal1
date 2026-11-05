@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>초안</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.bd{flex-grow:1;display:flex;flex-direction:column;gap:14px;padding:8px 20px 16px;overflow:hidden}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:14px}
+.row{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid #E8E8E4}
+.row:last-child{border-bottom:0}
+.sub{font-size:12px;color:#5E5E5E}
+.pv{font-size:14px;line-height:20px;color:#3F3F3F;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.del{align-self:center;min-height:44px;padding:0 10px;border:0;background:transparent;font-family:inherit;font-size:13px;color:#5E5E5E}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="Main.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span class="tt">초안</span></div>
+  <div class="bd">
+    <div class="card">
+      <div class="row"><a href="LT02.dc.html" style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0; text-decoration: none"><span style="display: flex; gap: 6px; align-items: baseline"><b style="font-size: 15px">Maya</b><span class="sub">답장</span><span class="sub" style="margin-left: auto">오늘 23:40</span></span><span class="pv">Hi Maya, Thank you for your letter. I loved the picture of you sitting by the window…</span><span class="sub">계정에 저장됨</span></a><button type="button" class="del">삭제</button></div>
+      <div class="row"><a href="#" style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0; text-decoration: none"><span style="display: flex; gap: 6px; align-items: baseline"><b style="font-size: 15px">Inés</b><span class="sub">첫 편지</span><span class="sub" style="margin-left: auto">어제</span></span><span class="pv">Hello Inés! I read about your Saturday fruit. In Korea, persimmons are…</span><span class="sub">이 기기에 저장됨 · 계정 저장 재시도</span></a><button type="button" class="del">삭제</button></div>
+    </div>
+    <p style="margin: 0; font-size: 13px; line-height: 19px; color: #5E5E5E">누르면 이어서 써요. ‘이 기기에 저장됨’ 초안은 다른 기기에서 보이지 않을 수 있어요.</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

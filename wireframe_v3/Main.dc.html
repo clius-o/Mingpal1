@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>우편함</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}a:hover{color:#000}
+.row{display:flex;gap:12px;padding:14px 16px;text-decoration:none;border-bottom:1px solid #E8E8E4}
+.av{width:44px;height:44px;border-radius:22px;background:#D9D9D5;flex-shrink:0}
+.nm{font-size:16px;font-weight:700}
+.sub{font-size:12px;color:#5E5E5E}
+.pv{font-size:14px;line-height:20px;color:#3F3F3F;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.dot{width:6px;height:6px;border-radius:3px;background:#1F1F1F;display:inline-block}
+.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-top:1px solid #D6D6D2;padding:8px 0 28px}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:44px;font-size:11px;text-decoration:none;color:#5E5E5E}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F4F2; color: #1F1F1F; font-family: 'Noto Sans KR', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 56px 20px 12px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700">우편함</h1>
+
+    <a href="LT00.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #FFFFFF; border: 1.5px solid #1F1F1F; border-radius: 14px; text-decoration: none">
+      <span role="img" aria-label="봉투" style="width: 40px; height: 30px; border: 1.5px solid #8A8A86; border-radius: 3px; flex-shrink: 0"></span>
+      <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><b style="font-size: 15px">오늘의 우편 · 편지 2통</b><span class="sub">Maya · 리스본에서, 우체국에서</span></span>
+      <span aria-hidden="true">›</span>
+    </a>
+
+    <a href="MB06.dc.html" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; background: #FFFFFF; border: 1px dashed #8A8A86; border-radius: 12px; font-size: 14px; color: #5E5E5E; text-decoration: none">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1-4L16 5l3 3L8 19z"></path></svg>오늘 있었던 일을 한 줄 남겨 두세요</a>
+
+    <div style="display: flex; gap: 8px">
+      <a href="MB02.dc.html" style="display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border: 1px solid #1F1F1F; border-radius: 20px; font-size: 14px; text-decoration: none"><span class="dot" aria-hidden="true"></span>첫 편지 1</a>
+      <a href="MB03.dc.html" style="display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border: 1px solid #D6D6D2; border-radius: 20px; font-size: 14px; text-decoration: none; color: #3F3F3F">초안 <span class="dot" aria-label="있음" style="background: #8A8A86"></span></a>
+      <a href="MB04.dc.html" style="display: flex; align-items: center; height: 40px; padding: 0 14px; border: 1px solid #D6D6D2; border-radius: 20px; font-size: 14px; text-decoration: none; color: #3F3F3F">보관</a>
+    </div>
+
+    <div style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; border: 1px solid #E2E2DE">
+      <a class="row" href="MB05.dc.html"><span class="av" aria-hidden="true"></span><span style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex-grow: 1"><span style="display: flex; align-items: baseline; gap: 6px"><span class="nm">Maya</span><span class="sub">리스본</span><span class="sub" style="margin-left: auto">오늘</span></span><span class="pv">지난 주말에 비가 많이 와서 빵집까지 먼 길로 걸어갔어요. 창가에 앉아서 사람들이 우산을…</span><span style="display: flex; gap: 8px; font-size: 12px; font-weight: 500"><span style="display: flex; align-items: center; gap: 4px"><span class="dot" aria-hidden="true"></span>새 편지</span><span style="color: #5E5E5E">· 쓰던 답장</span></span></span></a>
+      <a class="row" href="#"><span class="av" aria-hidden="true"></span><span style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex-grow: 1"><span style="display: flex; align-items: baseline; gap: 6px"><span class="nm">Lena</span><span class="sub">베를린</span><span class="sub" style="margin-left: auto">11월 1일</span></span><span class="pv">Thank you for the long letter. I read it twice on the train this morning…</span></span></a>
+      <a class="row" href="#"><span class="av" aria-hidden="true"></span><span style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex-grow: 1"><span style="display: flex; align-items: baseline; gap: 6px"><span class="nm">Amara</span><span class="sub">라고스</span><span class="sub" style="margin-left: auto">10월 20일</span></span><span class="sub">편지 교류를 쉬고 있어요</span></span></a>
+      <a class="row" href="#"><span class="av" aria-hidden="true"></span><span style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex-grow: 1"><span style="display: flex; align-items: baseline; gap: 6px"><span class="nm">Kenji</span><span class="sub">오사카</span><span class="sub" style="margin-left: auto">9월 28일</span></span><span class="sub">한 달째 조용해요 · 보관하기</span></span></a>
+      <a class="row" href="MB07.dc.html" style="border-bottom: 0"><span role="img" aria-label="우체국 도장" style="width: 44px; height: 44px; border-radius: 22px; border: 1.5px dashed #5E5E5E; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex-grow: 1"><span style="display: flex; align-items: baseline; gap: 6px"><span class="nm">밍팔 우체국</span><span class="sub" style="margin-left: auto">오늘</span></span><span class="pv">답장이 늦어도 괜찮아요. 기다리는 동안 해 볼 만한 것들을 적어 보냈어요.</span></span></a>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="하단 메뉴">
+    <a href="Main.dc.html" aria-current="page" style="font-weight: 700; color: #1F1F1F"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>우편함</a>
+    <a href="FD01.dc.html"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"></circle><path d="M20 20l-4.5-4.5"></path></svg>친구 찾기</a>
+    <a href="LR01.dc.html"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"></path><path d="M20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"></path></svg>배움</a>
+    <a href="ME01.dc.html"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>내 공간</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>첫 추천</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.btn2{display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#1F1F1F;border:1px solid #1F1F1F;border-radius:12px;font-size:15px;text-decoration:none;font-family:inherit}
+.pg{flex-grow:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;padding-right:20px}
+.pg span{height:4px;border-radius:2px;background:#1F1F1F}
+.c{display:flex;flex-direction:column;gap:10px;padding:16px;background:#fff;border:1px solid #E2E2DE;border-radius:14px;text-decoration:none}
+.q{margin:0;font-size:15px;line-height:23px;font-weight:500}
+.who{display:flex;align-items:center;gap:8px;font-size:13px;color:#5E5E5E}
+.av{width:24px;height:24px;border-radius:12px;background:#D9D9D5}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div style="display: flex; align-items: center; gap: 8px; padding: 48px 8px 0">
+    <a href="ON07.dc.html" aria-label="뒤로" data-v3="1" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div class="pg" role="progressbar" aria-label="가입 진행" aria-valuemin="1" aria-valuemax="7" aria-valuenow="7"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 20px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">이런 하루를 보내는<br>친구들이 있어요</h1>
+    <p style="margin: 0 0 4px; font-size: 14px; color: #3F3F3F">궁금한 장면이 있으면 첫 편지를 써 보세요.</p>
+    <a class="c" href="FD03.dc.html"><p class="q">“토요일 아침마다 시장에서 처음 보는 과일을 하나씩 사 봐요.”</p><span class="who"><span class="av"></span><b style="color: #1F1F1F">Inés</b> · 발렌시아 9,900km · 교환 편지</span></a>
+    <a class="c" href="#"><p class="q">“I fix old bikes in my garage on rainy evenings.”</p><span class="who"><span class="av"></span><b style="color: #1F1F1F">Tom</b> · 브리스톨 9,000km · 영어 편지</span></a>
+    <a class="c" href="#"><p class="q">“After work I study English at a small café near the lake.”</p><span class="who"><span class="av"></span><b style="color: #1F1F1F">Hanh</b> · 하노이 2,700km · 영어 편지</span></a>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn2" href="Main.dc.html">나중에 쓸게요</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

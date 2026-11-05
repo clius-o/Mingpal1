@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intro (EN)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.foot{padding:12px 20px 34px;display:flex;flex-direction:column;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;border:0;font-family:inherit}
+.ph{background:#E2E2DE;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#5E5E5E;font-size:13px}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div style="display: flex; justify-content: flex-end; padding: 48px 12px 0"><a href="ON02.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 8px; font-size: 14px; color: #5E5E5E; text-decoration: none">Skip</a></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 20px; padding: 16px 28px">
+    <div class="ph" role="img" aria-label="Illustration: a mailbox and letters flying in" style="height: 300px">Illustration</div>
+    <h1 style="margin: 0; font-size: 26px; line-height: 36px; font-weight: 700">Friends abroad,<br>made by letter</h1>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 23px; color: #3F3F3F">
+      <span>Meet through letters you take time to write, not chats.</span>
+      <span>When you're stuck, AI helps. Only you see it.</span>
+      <span>Phrases you learn pile up, ready for your next letter.</span>
+    </div>
+  </div>
+  <div class="foot">
+    <a class="btn" href="ON02.dc.html">Get started</a>
+    <a href="ON02.dc.html" style="min-height: 44px; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #3F3F3F; text-decoration: none">I already have an account</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

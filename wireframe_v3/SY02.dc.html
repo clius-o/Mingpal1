@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>우편함 — 연결 끊김</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.row{display:flex;gap:12px;padding:16px;border-bottom:1px solid #E8E8E4}
+.row:last-child{border-bottom:0}
+.av{width:44px;height:44px;border-radius:22px;background:#D9D9D5;flex-shrink:0}
+.bar{height:10px;border-radius:5px;background:#E2E2DE}
+.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-top:1px solid #D6D6D2;padding:8px 0 28px}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:44px;font-size:11px;color:#5E5E5E;text-decoration:none}
+.nav i{width:22px;height:22px;border:1.6px solid currentColor;border-radius:6px;box-sizing:border-box}
+</style>
+</helmet>
+<div class="s">
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px; padding: 56px 20px 16px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700">우편함</h1>
+    <div role="status" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; background: #fff; border: 1.5px solid #1F1F1F; border-radius: 12px"><b style="font-size: 14px">연결되지 않았어요</b><span style="font-size: 13px; line-height: 19px; color: #3F3F3F">받아 둔 편지는 읽을 수 있고, 쓰던 편지는 이 기기에 저장돼요. 다시 연결돼도 편지를 자동으로 보내지는 않아요.</span></div>
+    <div style="background: #fff; border: 1px solid #E2E2DE; border-radius: 16px">
+      <div class="row"><span class="av"></span><span style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1"><b style="font-size: 16px">Maya</b><span style="font-size: 14px; line-height: 20px; color: #3F3F3F">지난 주말에 비가 많이 와서 빵집까지 먼 길로 걸어갔어요…</span></span></div>
+      <div class="row"><span class="av"></span><span style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1"><b style="font-size: 16px">Daniel</b><span style="font-size: 14px; line-height: 20px; color: #3F3F3F">Thanks for telling me about Jeonju. I looked up bibimbap…</span></span></div>
+    </div>
+    <span style="font-size: 12px; letter-spacing: 0.08em; color: #5E5E5E; font-weight: 500">불러오는 중일 때 (참고)</span>
+    <div aria-hidden="true" style="background: #fff; border: 1px solid #E2E2DE; border-radius: 16px">
+      <div class="row"><span class="av" style="background: #E2E2DE"></span><span style="display: flex; flex-direction: column; gap: 8px; flex-grow: 1; padding-top: 4px"><span class="bar" style="width: 40%"></span><span class="bar" style="width: 90%"></span><span class="bar" style="width: 70%"></span></span></div>
+    </div>
+    <p style="margin: 0; font-size: 12px; line-height: 18px; color: #5E5E5E">불러오는 중에는 빈 우편함 문구를 먼저 보이지 않아요. 새로고침에 실패하면 목록은 그대로 두고 위에 ‘새 편지를 불러오지 못했어요 · 다시 시도’를 보여요.</p>
+  </div>
+  <nav class="nav" aria-label="하단 메뉴"><a href="Main.dc.html" aria-current="page" style="color: #1F1F1F; font-weight: 700"><i></i>우편함</a><a href="FD01.dc.html"><i></i>친구 찾기</a><a href="LR01.dc.html"><i></i>배움</a><a href="ME01.dc.html"><i></i>내 공간</a></nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>탈퇴</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.li{display:flex;gap:8px;font-size:14px;line-height:21px;color:#3F3F3F}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="ME10.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px; padding: 8px 20px 16px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">밍팔을 떠나기 전에</h1>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px">
+      <span class="li"><span aria-hidden="true">·</span>내가 보낸 편지는 친구들의 기록에 ‘탈퇴한 사용자’로 남아요</span>
+      <span class="li"><span aria-hidden="true">·</span>받은 편지, 초안, 표현장은 볼 수 없게 되고 30일 안에 지워져요</span>
+      <span class="li"><span aria-hidden="true">·</span>되돌릴 수 없어요</span>
+    </div>
+    <div role="alert" style="display: flex; align-items: center; gap: 10px; padding: 14px; border: 1.5px solid #1F1F1F; border-radius: 12px; background: #fff"><span style="display: flex; flex-direction: column; flex-grow: 1"><b style="font-size: 14px">이 기기에만 저장된 초안 1개</b><span style="font-size: 12px; color: #5E5E5E">Inés에게 쓰던 첫 편지</span></span><button type="button" style="min-height: 40px; padding: 0 12px; border: 1px solid #1F1F1F; border-radius: 8px; background: #fff; font-family: inherit; font-size: 13px">복사하기</button></div>
+    <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #1F1F1F">위 내용을 확인했어요</label>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn" href="#" aria-disabled="true" style="opacity: 0.35">다시 로그인하고 탈퇴하기</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>언어 설정</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}a:hover{color:#000}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F4F2; color: #1F1F1F; font-family: 'Noto Sans KR', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 8px; padding: 48px 8px 0">
+    <a href="ON03.dc.html" aria-label="뒤로" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <div role="progressbar" aria-label="가입 진행" aria-valuemin="1" aria-valuemax="7" aria-valuenow="2" style="flex-grow: 1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; padding-right: 20px"><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span></div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 12px 20px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">어떤 말로 편지를 쓸까요?</h1>
+
+    <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+      <legend style="padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 700">모국어</legend>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <button type="button" aria-pressed="true" style="min-height: 40px; padding: 0 16px; border: 1.5px solid #1F1F1F; border-radius: 20px; background: #1F1F1F; color: #FFFFFF; font-family: inherit; font-size: 14px">한국어</button>
+        <button type="button" style="min-height: 40px; padding: 0 16px; border: 1px dashed #8A8A86; border-radius: 20px; background: transparent; color: #3F3F3F; font-family: inherit; font-size: 14px">+ 하나 더 (선택)</button>
+      </div>
+    </fieldset>
+
+    <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+      <legend style="padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 700">잘하는 언어 (선택)</legend>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <button type="button" style="min-height: 40px; padding: 0 16px; border: 1px dashed #8A8A86; border-radius: 20px; background: transparent; color: #3F3F3F; font-family: inherit; font-size: 14px">+ 고르기</button>
+      </div>
+    </fieldset>
+
+    <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 8px">
+      <legend style="padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 700">배우는 언어</legend>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+        <button type="button" aria-pressed="true" style="min-height: 48px; border: 2px solid #1F1F1F; border-radius: 12px; background: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; color: #1F1F1F">영어</button>
+        <button type="button" disabled="{{yes}}" style="min-height: 48px; border: 1px solid #E2E2DE; border-radius: 12px; background: #EDEDEA; font-family: inherit; font-size: 15px; color: #8A8A86">한국어</button>
+        <button type="button" aria-pressed="false" style="min-height: 48px; border: 1px solid #8A8A86; border-radius: 12px; background: #FFFFFF; font-family: inherit; font-size: 15px; color: #1F1F1F">없음</button>
+      </div>
+      <span style="font-size: 13px; color: #5E5E5E">모국어·잘하는 언어는 고를 수 없어요.</span>
+    </fieldset>
+
+    <fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 6px">
+      <legend style="padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 700">영어로 이 정도 쓸 수 있어요</legend>
+      <label style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid #E2E2DE; border-radius: 10px; background: #FFFFFF">
+        <input type="radio" name="lv" style="margin: 3px 0 0; accent-color: #1F1F1F"><span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 500">처음 배워요</span><span style="font-size: 12px; color: #5E5E5E">Hello. I am Jiyun.</span></span>
+      </label>
+      <label style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid #E2E2DE; border-radius: 10px; background: #FFFFFF">
+        <input type="radio" name="lv" style="margin: 3px 0 0; accent-color: #1F1F1F"><span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 500">간단한 문장</span><span style="font-size: 12px; color: #5E5E5E">I like coffee. I live in Seoul.</span></span>
+      </label>
+      <label style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 2px solid #1F1F1F; border-radius: 10px; background: #FFFFFF">
+        <input type="radio" name="lv" checked="{{yes}}" readOnly="{{yes}}" style="margin: 3px 0 0; accent-color: #1F1F1F"><span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 700">일상 이야기</span><span style="font-size: 12px; color: #5E5E5E">Last weekend I went hiking with my friends.</span></span>
+      </label>
+      <label style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid #E2E2DE; border-radius: 10px; background: #FFFFFF">
+        <input type="radio" name="lv" style="margin: 3px 0 0; accent-color: #1F1F1F"><span style="display: flex; flex-direction: column"><span style="font-size: 14px; font-weight: 500">자유롭게</span><span style="font-size: 12px; color: #5E5E5E">I've been trying to leave weekends unplanned.</span></span>
+      </label>
+      <span style="font-size: 13px; color: #5E5E5E">예문을 보고 가장 비슷한 것을 골라요. 나중에 바꿀 수 있어요.</span>
+    </fieldset>
+  </div>
+
+  <div style="padding: 12px 20px 34px">
+    <a href="ON09.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; background: #1F1F1F; color: #FFFFFF; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none">다음</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return { yes: true }; }
+}
+</script>
+</body>
+</html>

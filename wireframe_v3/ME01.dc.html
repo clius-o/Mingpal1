@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>내 공간</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:14px}
+.r{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 16px;border-bottom:1px solid #E8E8E4;font-size:15px;text-decoration:none}
+.r:last-child{border-bottom:0}
+.r span{font-size:13px;color:#5E5E5E}
+.nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border-top:1px solid #D6D6D2;padding:8px 0 28px}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:44px;font-size:11px;color:#5E5E5E;text-decoration:none}
+.nav i{width:22px;height:22px;border:1.6px solid currentColor;border-radius:6px;box-sizing:border-box}
+</style>
+</helmet>
+<div class="s">
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 56px 20px 16px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700">내 공간</h1>
+    <a href="ME02.dc.html" class="card" style="display: flex; align-items: center; gap: 14px; padding: 16px; text-decoration: none"><span style="width: 56px; height: 56px; border-radius: 28px; background: #BDBDB8"></span><span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><b style="font-size: 18px">지윤</b><span style="font-size: 13px; color: #5E5E5E">서울 · 영어 배우는 중(일상 이야기)</span></span><span style="font-size: 13px; color: #3F3F3F">프로필 ›</span></a>
+    <div class="card">
+      <a class="r" href="ME03.dc.html">언어 설정<span>›</span></a>
+      <a class="r" href="ME04.dc.html">교류 설정<span>새 친구 받는 중 ›</span></a>
+      <a class="r" href="ME05.dc.html">알림<span>›</span></a>
+      <a class="r" href="ME06.dc.html">차단 목록<span>›</span></a>
+    </div>
+    <div class="card">
+      <a class="r" href="ME07.dc.html">AI 도움 안내<span>›</span></a>
+      <a class="r" href="ME08.dc.html">밍팔 플러스<span>베타 무료 ›</span></a>
+      <a class="r" href="ME10.dc.html">계정<span>›</span></a>
+    </div>
+  </div>
+  <nav class="nav" aria-label="하단 메뉴"><a href="Main.dc.html"><i></i>우편함</a><a href="FD01.dc.html"><i></i>친구 찾기</a><a href="LR01.dc.html"><i></i>배움</a><a href="ME01.dc.html" aria-current="page" style="color: #1F1F1F; font-weight: 700"><i></i>내 공간</a></nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

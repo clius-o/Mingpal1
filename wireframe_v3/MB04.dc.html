@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>보관한 교류</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.bd{flex-grow:1;display:flex;flex-direction:column;gap:14px;padding:8px 20px 16px;overflow:hidden}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:14px}
+.row{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid #E8E8E4}
+.row:last-child{border-bottom:0}
+.av{width:40px;height:40px;border-radius:20px;background:#D9D9D5;flex-shrink:0}
+.sub{font-size:12px;color:#5E5E5E}
+.pv{font-size:14px;line-height:20px;color:#3F3F3F;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.chip{align-self:center;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #D6D6D2;border-radius:18px;background:#fff;font-size:12px;font-family:inherit;color:#1F1F1F;white-space:nowrap}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="Main.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span class="tt">보관한 교류</span></div>
+  <div class="bd">
+    <p style="margin: 0; font-size: 13px; line-height: 20px; color: #5E5E5E">보관해도 기록은 그대로예요. 상대에게 알리지 않고, 새 편지가 오면 우편함으로 돌아와요.</p>
+    <div class="card">
+      <div class="row"><span class="av"></span><a href="MB05.dc.html" style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0; text-decoration: none"><span style="display: flex; gap: 6px; align-items: baseline"><b style="font-size: 15px">Oliver</b><span class="sub">호주 · 멜버른</span></span><span class="pv">Sorry for the late reply. Work has been crazy, but I finally…</span><span class="sub">8월 14일</span></a><button type="button" class="chip">보관 해제</button></div>
+      <div class="row"><span class="av"></span><a href="#" style="display: flex; flex-direction: column; gap: 4px; flex-grow: 1; min-width: 0; text-decoration: none"><span style="display: flex; gap: 6px; align-items: baseline"><b style="font-size: 15px">Priya</b><span class="sub">인도 · 푸네</span></span><span class="pv">한국 겨울은 정말 추워요? 저는 눈을 한 번도 본 적이 없어요…</span><span class="sub">7월 2일</span></a><button type="button" class="chip">보관 해제</button></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

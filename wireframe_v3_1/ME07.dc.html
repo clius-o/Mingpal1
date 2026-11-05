@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>AI 도움 안내</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.it{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-bottom:1px solid #E8E8E4}
+.it:last-child{border-bottom:0}
+.it b{font-size:14px}
+.it span{font-size:13px;line-height:20px;color:#3F3F3F}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;border:0;font-family:inherit}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div style="display: flex; align-items: center; padding: 48px 8px 0"><a href="ME01.dc.html" aria-label="뒤로" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span style="font-size: 16px; font-weight: 700">AI 도움 안내</span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px; padding: 12px 20px 16px">
+    <div style="background: #fff; border: 1.5px dashed #8A8A86; border-radius: 14px">
+      <div class="it"><b>친구에게는 보이지 않아요</b><span>내가 고른 문장만 편지에 들어가요. 도움을 받았다는 표시는 남지 않아요</span></div>
+      <div class="it"><b>친구들도 같은 도움을 받을 수 있어요</b><span>편지 전체를 AI가 쓰지는 않아요. 표현 찾기는 한 번에 최대 2문장, 편지에는 한 문장씩 넣어요</span></div>
+      <div class="it"><b>AI에 전달되는 것</b><span>· 내가 고른 문장과 적은 생각<br>· ‘뜻 보기’나 ‘영어로는?’을 누른 문장<br>· 첨삭을 위해 내가 보낸 편지<br>· 안전 검사를 위해 오가는 모든 편지</span></div>
+      <div class="it"><b>전달되지 않는 것</b><span>표현 찾기를 누르기 전의 일상 메모, 내 프로필</span></div>
+      <div class="it"><b>AI 설명은 틀릴 수 있어요</b><span>마음에 드는 것만 골라 쓰세요</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

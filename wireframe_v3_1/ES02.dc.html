@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>로딩 상태</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{word-break:keep-all;width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;border:0;font-family:inherit}
+.btn2{display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#1F1F1F;border:1px solid #1F1F1F;border-radius:12px;font-size:15px;text-decoration:none;font-family:inherit}
+.sk{background:#E2E2DE;border-radius:6px}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div style="display: flex; align-items: center; padding: 48px 8px 0"><a href="Main.dc.html" aria-label="뒤로" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span style="flex-grow: 1; text-align: center; font-size: 13px; color: #5E5E5E">로딩 6종</span><span style="width: 44px"></span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px; padding: 12px 16px 0; overflow: hidden"><section aria-label="1. 우편함" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">1 · 우편함</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section><section aria-label="2. 첫 편지" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">2 · 첫 편지</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section><section aria-label="3. 친구 찾기" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">3 · 친구 찾기</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section><section aria-label="4. 표현장" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">4 · 표현장</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section><section aria-label="5. 친구별 기록" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">5 · 친구별 기록</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section><section aria-label="6. 배움 홈" style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; background: #fff; border: 1px solid #E2E2DE; border-radius: 14px"><span style="font-size: 12px; color: #5E5E5E">6 · 배움 홈</span><span style="display: flex; gap: 10px; align-items: center"><span class="sk" style="width: 36px; height: 36px; border-radius: 18px; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1"><span class="sk" style="height: 10px; width: 40%"></span><span class="sk" style="height: 10px; width: 85%"></span></span></span></section>
+    <span style="font-size: 12px; line-height: 18px; color: #5E5E5E">불러오는 중에는 구조만 보이고, 빈 상태 문구는 먼저 보이지 않아요. 모션 줄이기를 켜면 정지해요.</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return { yes: true }; } }
+</script>
+</body>
+</html>

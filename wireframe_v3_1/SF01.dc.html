@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>신고</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.rd{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-bottom:1px solid #E8E8E4;font-size:14px}
+.rd:last-child{border-bottom:0}
+.rd input{width:18px;height:18px;margin:0;accent-color:#1F1F1F}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="LT01.dc.html" aria-label="닫기"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></a><span class="tt">이 편지 신고하기</span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 8px 20px 12px; overflow: hidden">
+    <div style="padding: 12px 14px; background: #E6E6E2; border-radius: 10px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; color: #5E5E5E">신고할 편지 · Lukas · 11월 3일 첫 편지</span><span style="font-size: 13px; line-height: 19px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical">Hallo Jiyun! I saw your bakery story. In Hamburg we have a bread called…</span></div>
+    <fieldset style="margin: 0; padding: 0; border: 0"><legend style="padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 700">어떤 문제인가요?</legend>
+    <div style="background: #fff; border: 1px solid #E2E2DE; border-radius: 14px">
+      <label class="rd"><input type="radio" name="r" checked="{{yes}}" readOnly="{{yes}}">연애·성적인 접근</label><label class="rd"><input type="radio" name="r">밍팔 밖으로 연락 유도</label><label class="rd"><input type="radio" name="r">돈 이야기</label><label class="rd"><input type="radio" name="r">욕설·괴롭힘</label><label class="rd"><input type="radio" name="r">기타</label>
+    </div></fieldset>
+    <label for="more" style="font-size: 13px; font-weight: 700">더 알려 줄 내용 (선택)</label>
+    <textarea id="more" style="resize: none; height: 64px; box-sizing: border-box; padding: 10px 12px; border: 1px solid #D6D6D2; border-radius: 12px; background: #fff; font-family: inherit; font-size: 14px"></textarea>
+    <p style="margin: 0; font-size: 13px; line-height: 19px; color: #5E5E5E">신고한 편지는 바로 접혀요. 이 편지와 최소한의 정보만 운영팀에 전달되고, 사람이 확인해요. 상대에게는 알리지 않아요.</p>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn" href="SF02.dc.html">신고하기</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return { yes: true }; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>표현 상세</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.lab{font-size:12px;letter-spacing:.06em;color:#5E5E5E;font-weight:500}
+.btn2{display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#1F1F1F;border:1px solid #D6D6D2;border-radius:12px;font-size:15px;font-family:inherit;width:100%}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="LR03.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 8px 20px 16px">
+    <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #5E5E5E"><span style="width: 18px; height: 18px; border-radius: 9px; background: #D9D9D5"></span>Lena의 편지에서 · 11월 1일</span>
+    <h1 style="margin: 0; font-size: 30px; line-height: 38px; font-weight: 700">look it up</h1>
+    <p style="margin: 0; font-size: 16px; color: #3F3F3F">(모르는 것을) 찾아보다</p>
+    <span class="lab" style="margin-top: 8px">원래 문장</span>
+    <p style="margin: 0; padding: 14px 16px; background: #fff; border: 1px solid #E2E2DE; border-radius: 12px; font-size: 15px; line-height: 23px">I <b>looked it up</b>, and now I want to try it.</p>
+    <a href="#" style="font-size: 13px; color: #3F3F3F; min-height: 36px; display: flex; align-items: center">원래 편지 보기 ›</a>
+    <span class="lab">써 본 편지</span>
+    <a href="#" style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: #fff; border: 1px dashed #8A8A86; border-radius: 12px; font-size: 14px; text-decoration: none"><span role="img" aria-label="써 본 표현 도장" style="width: 28px; height: 28px; border-radius: 14px; border: 1.5px dashed #5E5E5E; flex-shrink: 0"></span><span style="flex-grow: 1">11월 3일 Lena에게 보낸 편지에서 처음 썼어요</span><span aria-hidden="true">›</span></a>
+    <label for="memo" class="lab">메모</label>
+    <textarea id="memo" value="{{memo}}" readOnly="{{yes}}" style="resize: none; height: 72px; box-sizing: border-box; padding: 12px 14px; border: 1px solid #D6D6D2; border-radius: 12px; background: #fff; font-family: inherit; font-size: 14px; line-height: 21px; color: #1F1F1F"></textarea>
+  </div>
+  <div style="padding: 12px 20px 34px"><button type="button" class="btn2">표현장에서 삭제</button></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return { yes: true, memo: "비빔밥 이야기에 답장할 때 써 보기" }; } }
+</script>
+</body>
+</html>

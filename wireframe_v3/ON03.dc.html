@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>시작하기 전에</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;border:0;font-family:inherit}
+.pg{flex-grow:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;padding-right:20px}
+.pg span{height:4px;border-radius:2px;background:#D6D6D2}
+.pg .d{background:#1F1F1F}
+.ck{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 16px;border-bottom:1px solid #E8E8E4;font-size:15px}
+</style>
+</helmet>
+<div class="s">
+  <div style="display: flex; align-items: center; gap: 8px; padding: 48px 8px 0">
+    <a href="ON02.dc.html" aria-label="뒤로" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a>
+    <div class="pg" role="progressbar" aria-label="가입 진행" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1"><span class="d"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 16px; padding: 16px 20px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">시작하기 전에</h1>
+    <label for="by" style="font-size: 13px; font-weight: 700">태어난 해</label>
+    <select id="by" style="height: 52px; box-sizing: border-box; padding: 0 14px; border: 2px solid #1F1F1F; border-radius: 12px; background: #fff; font-family: inherit; font-size: 16px; color: #1F1F1F"><option>1992년</option></select>
+    <div style="background: #fff; border: 1px solid #E2E2DE; border-radius: 14px">
+      <label class="ck"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #1F1F1F">서비스 이용약관 <span style="color: #5E5E5E; font-size: 13px">(필수)</span><a href="#" style="margin-left: auto; font-size: 13px; color: #3F3F3F">보기</a></label>
+      <label class="ck" style="border-bottom: 0"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #1F1F1F">개인정보 처리방침 <span style="color: #5E5E5E; font-size: 13px">(필수)</span><a href="#" style="margin-left: auto; font-size: 13px; color: #3F3F3F">보기</a></label>
+    </div>
+    <p style="margin: 0; font-size: 13px; line-height: 20px; color: #5E5E5E">밍팔은 만 18세 이상만 쓸 수 있어요. 태어난 해만 확인하고, 성별과 실명은 묻지 않아요. 개인정보 처리방침에는 받은 편지의 문장을 AI 해석에 쓸 수 있다는 내용이 있어요.</p>
+  </div>
+  <div style="padding: 12px 20px 34px"><a class="btn" href="ON04.dc.html" aria-disabled="true" style="opacity: 0.35">다음</a><p style="margin: 8px 0 0; text-align: center; font-size: 12px; color: #5E5E5E">필수 항목에 모두 동의하면 넘어갈 수 있어요</p></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return { yes: true }; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>편지 설정</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:14px}
+.r{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 16px;border-bottom:1px solid #E8E8E4;box-sizing:border-box;text-decoration:none}
+.r:last-child{border-bottom:0}
+.t{display:flex;flex-direction:column;gap:2px;flex-grow:1;font-size:15px}
+.t span{font-size:12px;line-height:18px;color:#5E5E5E}
+.tog{width:48px;height:28px;border-radius:14px;background:#D6D6D2;position:relative;border:0;flex-shrink:0;padding:0}
+.tog span{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:11px;background:#fff}
+.tog.y{background:#1F1F1F}
+.tog.y span{left:23px}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="ME01.dc.html" aria-label="뒤로"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a><span class="tt">편지 설정</span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 14px; padding: 8px 20px 16px">
+    <div class="card">
+      <div class="r"><span class="t">새 친구 받기<span style="font-size: 13px">끄면 친구 찾기에서 빠지고 새 첫 편지가 오지 않아요. 지금 친구들과는 그대로예요</span></span><button type="button" role="switch" aria-checked="true" aria-label="새 친구 받기" class="tog y"><span></span></button></div>
+      <a class="r" href="RL01.dc.html"><span class="t">잠시 쉬기<span>꺼져 있어요</span></span><span aria-hidden="true">›</span></a>
+    </div>
+    <div class="card">
+      <a class="r" href="#"><span class="t">편지 쓰는 시간<span style="font-size: 13px">일요일 저녁 · 쓰던 편지나 이번 주의 질문을 알려 드려요</span></span><span aria-hidden="true">›</span></a>
+      <div class="r"><span class="t">밍팔 우체국 편지<span style="font-size: 13px">첫 달 안내 3통 · 그 뒤 한 달에 한 통 이하</span></span><button type="button" role="switch" aria-checked="true" aria-label="밍팔 우체국 편지" class="tog y"><span></span></button></div>
+    </div>
+    <p style="margin: 0; font-size: 13px; line-height: 19px; color: #5E5E5E">아직 답장이 없는 첫 편지는 3통까지 보낼 수 있어요. 7일 동안 답장이 없거나 상대가 정중히 넘기면 한 자리가 비어요. 받은 첫 편지는 5통까지 쌓이고, 가득 차면 친구 찾기에서 잠시 빠져요.</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

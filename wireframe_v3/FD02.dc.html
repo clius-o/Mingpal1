@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>친구 찾기 조건</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}
+.s{width:390px;height:844px;box-sizing:border-box;background:#F4F4F2;color:#1F1F1F;font-family:'Noto Sans KR',sans-serif;display:flex;flex-direction:column;overflow:hidden}
+.top{display:flex;align-items:center;padding:48px 8px 0}
+.ib{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#1F1F1F;padding:0}
+.tt{flex-grow:1;font-size:16px;font-weight:700}
+.lab{font-size:13px;font-weight:700}
+.w{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid #D6D6D2;border-radius:18px;background:#fff;font-size:13px;font-family:inherit;color:#1F1F1F}
+.on{background:#1F1F1F;color:#fff;border-color:#1F1F1F}
+.foot{padding:12px 20px 34px;display:flex;gap:8px}
+.btn{flex:2;display:flex;align-items:center;justify-content:center;height:52px;background:#1F1F1F;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
+.btn2{flex:1;display:flex;align-items:center;justify-content:center;height:52px;background:#fff;color:#1F1F1F;border:1px solid #1F1F1F;border-radius:12px;font-size:15px;text-decoration:none}
+</style>
+</helmet>
+<div class="s">
+  <div class="top"><a class="ib" href="FD01.dc.html" aria-label="닫기"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg></a><span class="tt">조건</span></div>
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 20px; overflow: hidden">
+    <span class="lab">편지 방식</span>
+    <div class="w"><button type="button" class="chip on">모두</button><button type="button" class="chip">나는 영어로, 상대는 한국어로</button><button type="button" class="chip">둘 다 영어로</button></div>
+    <span class="lab" style="margin-top: 8px">상대의 수준</span>
+    <div class="w"><button type="button" class="chip on">모두</button><button type="button" class="chip">나와 비슷하게</button><button type="button" class="chip">원어민·자유롭게</button></div>
+    <span class="lab" style="margin-top: 8px">관심사</span>
+    <div class="w"><button type="button" class="chip on">요리</button><button type="button" class="chip on">빵집 탐방</button><button type="button" class="chip">산책</button><button type="button" class="chip">+ 다른 관심사</button></div>
+    <span class="lab" style="margin-top: 8px">나라</span>
+    <a href="#" style="display: flex; justify-content: space-between; align-items: center; min-height: 48px; padding: 0 14px; background: #fff; border: 1px solid #D6D6D2; border-radius: 12px; font-size: 14px; text-decoration: none">모든 나라<span aria-hidden="true">›</span></a>
+    <span class="lab" style="margin-top: 8px">교류 취향</span>
+    <div class="w"><button type="button" class="chip on">상관없음</button><button type="button" class="chip">나와 비슷한 답장 리듬</button></div>
+  </div>
+  <div class="foot"><a class="btn2" href="#">초기화</a><a class="btn" href="FD01.dc.html">적용</a></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

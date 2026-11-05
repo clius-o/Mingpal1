@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>오늘의 한 장면 쓰기</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F1F1F}a:hover{color:#000}
+button,a[href],summary{position:relative}
+button::after,a[href]::after,summary::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:44px;transform:translate(-50%,-50%)}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F4F4F2; color: #1F1F1F; font-family: 'Noto Sans KR', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+  <div style="display: flex; align-items: center; gap: 8px; padding: 48px 8px 0">
+    <a href="ON09.dc.html" aria-label="뒤로" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none">
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg>
+    </a>
+    <div role="progressbar" aria-label="가입 진행" aria-valuemin="1" aria-valuemax="7" aria-valuenow="4" style="flex-grow: 1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; padding-right: 20px"><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #1F1F1F"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span><span style="height: 4px; border-radius: 2px; background: #D6D6D2"></span></div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 18px; padding: 16px 20px; overflow: hidden">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 700">요즘 당신의 하루에서<br>한 장면을 보여 주세요</h1>
+      <p style="margin: 0; font-size: 14px; line-height: 21px; color: #3F3F3F">영어로 1~3문장. 친구들이 이 장면을 보고 첫 편지를 써요.</p>
+    </div>
+
+    <details open="{{yes}}" style="background: #FFFFFF; border: 1px solid #E2E2DE; border-radius: 12px; padding: 12px 14px">
+      <summary style="font-size: 13px; font-weight: 700; min-height: 24px; cursor: pointer">예시 보기</summary>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 8px; font-size: 13px; line-height: 19px; color: #3F3F3F">
+        <span>“I take the long way home so I can pass the river.”</span>
+        <span>“Every Friday, my roommate and I cook something we've never made.”</span>
+        <span style="font-size: 13px; color: #5E5E5E">넓은 취미(영화, 여행)보다 구체적인 순간이 편지 거리가 돼요.</span>
+      </div>
+    </details>
+
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <label for="scene" style="font-size: 13px; font-weight: 700">나의 한 장면</label>
+      <textarea id="scene" value="{{scene}}" readOnly="{{yes}}" style="resize: none; height: 132px; box-sizing: border-box; background: #FFFFFF; border: 2px solid #1F1F1F; border-radius: 12px; padding: 14px; font-family: inherit; font-size: 16px; line-height: 24px; color: #1F1F1F">Every Sunday morning, I walk to a bakery I've never been to and pick just one bread. Last week it was a sweet potato bun.</textarea>
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <button type="button" style="display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1.5px dashed #5E5E5E; border-radius: 10px; background: #FFFFFF; font-family: inherit; font-size: 13px; color: #1F1F1F">표현 찾기 <span style="font-size: 12px; padding: 0 6px; height: 20px; display: inline-flex; align-items: center; border-radius: 3px; font-weight: 500; border: 1px dashed #5E5E5E; color: #5E5E5E">AI</span> 횟수 제한 없음</button>
+        <span style="font-size: 12px; color: #5E5E5E">2문장</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 8px 20px 20px">
+    <a href="ON06.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; background: #1F1F1F; color: #FFFFFF; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none">다음</a>
+    <a href="ON06.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 4px; font-size: 14px; color: #3F3F3F; text-decoration: none">다음에 하기</a>
+    <p style="margin: 0; text-align: center; font-size: 13px; color: #5E5E5E">장면을 쓰기 전에는 친구 찾기에 보이지 않아요</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+return { yes: true, scene: "Every Sunday morning, I walk to a bakery I've never been to and pick just one bread. Last week it was a sweet potato bun." };
+}
+}
+</script>
+</body>
+</html>

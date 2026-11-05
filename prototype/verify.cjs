@@ -1,0 +1,27 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const html=fs.readFileSync('dist/index.html','utf8');
+const js=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const nodes={},events={},saved={};
+const document={body:{classList:{toggle(){}}},querySelector(s){return nodes[s]??={innerHTML:'',textContent:'',hidden:false,disabled:false,focus(){}}},addEventListener(n,f){events[n]=f}};
+const context=vm.createContext({document,window:{scrollTo(){},addEventListener(){}},localStorage:{getItem:k=>saved[k],setItem:(k,v)=>saved[k]=v},setTimeout:()=>1,clearTimeout(){},console});
+vm.runInContext(js,context);
+const run=s=>vm.runInContext(s,context);
+const click=data=>events.click({target:{closest:()=>({dataset:data})}});
+assert(nodes['#main'].innerHTML.includes('우편함'));
+click({read:'Maya'});assert(nodes['#main'].innerHTML.includes('tiny bakery'));
+click({profile:'Maya'});click({compose:'Maya'});
+assert.equal(run('state.origin'),'read');assert.equal(run('state.composeBack'),'profile');
+assert(nodes['#main'].innerHTML.includes('id="reviewButton" data-go="review" disabled'));
+events.input({target:{id:'letterInput',value:'Hi Maya,\n\nI love quiet mornings. <script>alert(1)</script>'}});
+assert.equal(nodes['#reviewButton'].disabled,false);
+assert(saved['mingpal-prototype-v1'].includes('quiet mornings'));
+click({go:'review'});assert(nodes['#main'].innerHTML.includes('&lt;script&gt;'));
+click({action:'send'});assert.equal(run('state.sent.length'),1);assert.equal(run('state.drafts.Maya'),undefined);
+click({go:'mail'});assert(nodes['#main'].innerHTML.includes('보낸 편지'));
+click({action:'large'});assert.equal(run('state.large'),true);
+// Failed persistence must keep the editable draft and must not claim a send.
+click({compose:'Hana'});events.input({target:{id:'letterInput',value:'Hi Hana'}});
+context.localStorage.setItem=()=>{throw Error('quota')};
+click({go:'review'});click({action:'send'});
+assert.equal(run('state.drafts.Hana'),'Hi Hana');assert.equal(run('state.sent.length'),1);assert.equal(run('state.page'),'review');
+console.log('PASS: navigation, profile return route, empty validation, local draft persistence, escaped preview, simulated send, large text, failed-save recovery.');
