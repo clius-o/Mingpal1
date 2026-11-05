@@ -69,3 +69,35 @@ export const firstRecommendations = [
   { id: 'tom', quote: '“I fix old bikes in my garage on rainy evenings.”', english: true, name: 'Tom', meta: '브리스톨 9,000km · 영어 편지', avatar: img.avatarA4 },
   { id: 'hanh', quote: '“After work I study English at a small café near the lake.”', english: true, name: 'Hanh', meta: '하노이 2,700km · 영어 편지', avatar: img.avatarA1 },
 ];
+
+// FD01 candidates
+export const findCandidates = [
+  { id: 'ines', quote: '“토요일 아침마다 시장에서 처음 보는 과일을 하나씩 사 봐요. 이번 주는 감이었어요.”', english: false, name: 'Inés', where: '발렌시아, 9,900km 떨어진 곳에서', tags: '교환 편지 · 겹치는 관심사 요리', avatar: img.avatarA3 },
+  { id: 'tom', quote: '“I fix old bikes in my garage on rainy evenings. This one is from 1978.”', english: true, name: 'Tom', where: '브리스톨, 9,000km 떨어진 곳에서', tags: '영어 편지 · 겹치는 관심사 자전거', avatar: img.avatarA4 },
+  { id: 'hanh', quote: '“After work I study English at a small café near the lake. The owner knows my order.”', english: true, name: 'Hanh', where: '하노이, 2,700km 떨어진 곳에서', tags: '영어 편지 · Hanh도 영어를 배우는 중', avatar: img.avatarA1 },
+];
+
+// LR03 표현장 / LR04 표현 상세. Only the first entry has full detail in Figma; the rest show what is known.
+export type Phrase = {
+  id: string;
+  text: string;
+  used?: boolean;
+  kind: 'letter' | 'ai' | 'en';
+  source: string;
+  meaning?: string;
+  original?: { before: string; hit: string; after: string };
+  usedIn?: string;
+};
+export const phrases: Phrase[] = [
+  { id: 'look-it-up', text: 'look it up', used: true, kind: 'letter', source: 'Lena의 편지에서 · 찾아보다', meaning: '(모르는 것을) 찾아보다', original: { before: 'I ', hit: 'looked it up,', after: ' and now I want to try it.' }, usedIn: '11월 3일 Lena에게 보낸 편지에서 처음 썼어요' },
+  { id: 'take-the-long-way', text: 'take the long way', used: true, kind: 'en', source: '영어로는? · Maya의 편지 ‘먼 길로 걸어갔어요’에서' },
+  { id: 'with-the-whole-family', text: 'with the whole family', kind: 'ai', source: 'AI 첨삭에서 · ‘with whole family’를 고침' },
+  { id: 'made-a-mess', text: 'We made a mess, but that made it even more fun.', kind: 'ai', source: 'AI 표현 찾기에서' },
+  { id: 'get-lost', text: 'get lost in the building', kind: 'letter', source: 'Kenji의 편지에서 · 건물 안에서 길을 잃다' },
+];
+
+// LR02 review deck
+export type ReviewCard = { id: string; source: string; ask: string; ko: string; firstAttempt: string; answer: { before: string; hit: string; after: string }; explain: string };
+export const reviewDeck: ReviewCard[] = [
+  { id: 'r1', source: '첨삭에서 · 10월 25일 Maya에게 보낸 편지', ask: '이 말을 영어로 쓴다면?', ko: '가족 모두와 김치를 담갔어요.', firstAttempt: 'We made kimchi with whole family.', answer: { before: 'We made kimchi with ', hit: 'the whole family', after: '.' }, explain: '‘whole family’ 앞에는 the가 필요해요.' },
+];

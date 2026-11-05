@@ -1,4 +1,5 @@
 // LR01 배움 홈 (v3) — Figma 284:6167
+import { router } from 'expo-router';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Pressable } from 'react-native';
 import { AiBadge, Screen } from '../../src/components/primitives';
@@ -12,7 +13,7 @@ export default function LearnHome() {
       <ScrollView contentContainerStyle={styles.content}>
         <Txt v="title">배움</Txt>
 
-        <Pressable accessibilityRole="button" style={styles.review}>
+        <Pressable accessibilityRole="button" style={styles.review} onPress={() => router.push('/learn/review')}>
           <View style={{ flex: 1, gap: 4 }}>
             <Txt v="maru18" color="light">오늘의 복습</Txt>
             <Txt v="caption13" color="light" style={{ lineHeight: 16 }}>5장 · 약 2분</Txt>
@@ -20,7 +21,7 @@ export default function LearnHome() {
           <Txt v="strong14" color="light">시작 →</Txt>
         </Pressable>
 
-        <Pressable accessibilityRole="button" style={styles.usedRow}>
+        <Pressable accessibilityRole="button" style={styles.usedRow} onPress={() => router.push({ pathname: '/learn/phrases', params: { filter: 'used' } })}>
           <View style={styles.stampCircle}><Txt v="meta12Strong" color="olive">써 봄</Txt></View>
           <View style={{ flex: 1, gap: 4 }}>
             <Txt v="strong16">써 본 표현 9개</Txt>
@@ -32,7 +33,7 @@ export default function LearnHome() {
         <View style={{ gap: 12 }}>
           <View style={styles.zoneHead}>
             <Txt v="strong14">최근 표현</Txt>
-            <Pressable accessibilityRole="button" style={styles.moreTouch}><Txt v="meta12" color="sub">표현장 전체 ›</Txt></Pressable>
+            <Pressable accessibilityRole="button" style={styles.moreTouch} onPress={() => router.push('/learn/phrases')}><Txt v="meta12" color="sub">표현장 전체 ›</Txt></Pressable>
           </View>
           <View>{recentExpressions.map((e) => <ExpressionRow key={e.id} e={e} />)}</View>
         </View>
