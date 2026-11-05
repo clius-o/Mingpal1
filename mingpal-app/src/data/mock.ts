@@ -102,14 +102,6 @@ export const reviewDeck: ReviewCard[] = [
   { id: 'r1', source: '첨삭에서 · 10월 25일 Maya에게 보낸 편지', ask: '이 말을 영어로 쓴다면?', ko: '가족 모두와 김치를 담갔어요.', firstAttempt: 'We made kimchi with whole family.', answer: { before: 'We made kimchi with ', hit: 'the whole family', after: '.' }, explain: '‘whole family’ 앞에는 the가 필요해요.' },
 ];
 
-// LT03 confirm-before-send preview (Jiyun → Maya)
-export const sendPreview = [
-  'Hi Maya,',
-  'Thank you for your letter. I loved the picture of you sitting by the window in the rain.',
-  'You asked about a small routine that makes me feel at home. On Sunday evenings, I cook with my daughter. Last week we made a mess, but that made it even more fun.',
-  'Jiyun',
-];
-
 // ST01 stamp pictures: unlocked ones can be picked; locked ones show how they open (no buying — spec §5.3)
 export const stampPictures = [
   { id: 'default', label: '기본', source: img.stampThumbDefault },

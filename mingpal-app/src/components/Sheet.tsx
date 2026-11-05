@@ -24,8 +24,8 @@ export function Sheet({ title, aiNote, closeLabel, children, dim = 0.45, surface
       <View style={[styles.sheet, { backgroundColor: surface, maxHeight }]}>
         <View style={styles.grabber} />
         <View style={styles.titleRow}>
-          <Txt v="maru16" style={closeLabel ? { fontSize: 22, lineHeight: 28 } : { fontSize: 17, lineHeight: 24 }}>{title}</Txt>
-          {aiNote ? <Txt v="meta12" color="sub" style={{ marginLeft: 12 }}>{aiNote}</Txt> : null}
+          <Txt v="maru16" style={[{ flexShrink: 1 }, closeLabel ? { fontSize: 22, lineHeight: 28 } : { fontSize: 17, lineHeight: 24 }]}>{title}</Txt>
+          {aiNote ? <Txt v="meta12" color="sub" numberOfLines={1} style={{ marginLeft: 12, flexShrink: 0 }}>{aiNote}</Txt> : null}
           <Pressable accessibilityRole="button" accessibilityLabel="닫기" style={styles.close} onPress={close}>
             {closeLabel ? <Txt v="body14Medium" color="sub">{closeLabel}</Txt> : <Icon source={img.close} size={22} />}
           </Pressable>

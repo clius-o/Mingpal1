@@ -1,5 +1,5 @@
 // AI01 AI 도움 시트 (v3) — Figma 284:6053. Always marked "AI 도움 · 나만 보여요" (spec §13).
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { img } from '../src/assets';
@@ -13,6 +13,9 @@ const SUGGESTIONS = [
 ];
 
 export default function HelpSheet() {
+  // 첫 편지는 쓰기 도움 횟수 제한이 없다 (Figma 269:994)
+  const { first } = useLocalSearchParams<{ first?: string }>();
+  const isFirst = first === '1';
   const [tab, setTab] = useState<'find' | 'polish'>('find');
   const [pick, setPick] = useState(0);
 
@@ -39,8 +42,8 @@ export default function HelpSheet() {
         </View>
 
         <View style={{ gap: 4 }}>
-          <Txt v="body14Medium" color="sub">Maya의 질문</Txt>
-          <Txt v="body14" style={{ lineHeight: 21 }}>집처럼 편하게 느끼는 작은 습관이 있어요?</Txt>
+          <Txt v="body14Medium" color="sub">{isFirst ? 'Inés의 한 장면' : 'Maya의 질문'}</Txt>
+          <Txt v="body14" style={{ lineHeight: 21 }}>{isFirst ? '토요일 아침마다 시장에서 처음 보는 과일을 사 봐요.' : '집처럼 편하게 느끼는 작은 습관이 있어요?'}</Txt>
         </View>
         <View style={{ gap: 4 }}>
           <Txt v="body14Medium" color="sub">어떤 이야기를 전하고 싶나요?</Txt>
@@ -76,7 +79,7 @@ export default function HelpSheet() {
             <Txt v="strong16" color="light">편지에 넣기</Txt>
           </Pressable>
         </View>
-        <Txt v="caption13" color="sub" style={{ lineHeight: 16 }}>편지에는 고른 한 문장만 들어가요 · 오늘 남은 쓰기 도움 9회</Txt>
+        <Txt v="caption13" color="sub" style={{ lineHeight: 16 }}>{isFirst ? '첫 편지는 횟수 제한 없이 도와드려요' : '편지에는 고른 한 문장만 들어가요 · 오늘 남은 쓰기 도움 9회'}</Txt>
       </View>
     </View>
   );

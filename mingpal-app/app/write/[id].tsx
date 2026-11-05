@@ -9,9 +9,15 @@ import { Txt } from '../../src/components/Txt';
 import { colors, fonts } from '../../src/theme';
 
 export default function WriteLetter() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id, first } = useLocalSearchParams<{ id: string; first?: string }>();
+  const isFirst = first === '1';
   const to = id === 'ines' ? 'Inés' : 'Maya';
-  const [body, setBody] = useState('I loved this part. I also take the long way when I want to think.\nYou asked about a small routine that makes me feel at home.');
+  const [body, setBody] = useState(
+    isFirst ? 'I read about your Saturday fruit. In Korea, persimmons are' : 'I loved this part. I also take the long way when I want to think.\nYou asked about a small routine that makes me feel at home.',
+  );
+  // 첫 편지는 최소 길이 전에는 보낼 수 없다 (Figma 269:949)
+  const MIN_FIRST = 200;
+  const tooShort = isFirst && body.length < MIN_FIRST;
 
   return (
     <Screen>
@@ -26,7 +32,7 @@ export default function WriteLetter() {
           <View style={{ gap: 4 }}>
             <Txt v="title" style={{ fontFamily: fonts.newsSemiBold }}>
               {to}
-              <Txt v="title">에게 답장</Txt>
+              <Txt v="title">{isFirst ? '에게 첫 편지' : '에게 답장'}</Txt>
             </Txt>
             <Txt v="body14Tight" color="sub">교환 편지 · 나는 영어로 · 계정에 저장됨</Txt>
           </View>
@@ -38,10 +44,12 @@ export default function WriteLetter() {
 
           <View style={styles.card}>
             <Txt v="body16">Hi {to},</Txt>
-            <View style={styles.quote}>
-              <Txt v="meta12" color="sub">인용 · {to}가 쓴 문장</Txt>
-              <Txt v="body14" color="ink2" style={{ lineHeight: 18 }}>“빵집까지 먼 길로 걸어갔어요.”</Txt>
-            </View>
+            {isFirst ? null : (
+              <View style={styles.quote}>
+                <Txt v="meta12" color="sub">인용 · {to}가 쓴 문장</Txt>
+                <Txt v="body14" color="ink2" style={{ lineHeight: 18 }}>“빵집까지 먼 길로 걸어갔어요.”</Txt>
+              </View>
+            )}
             <TextInput
               value={body}
               onChangeText={setBody}
@@ -61,16 +69,21 @@ export default function WriteLetter() {
           </View>
 
           <View style={styles.tools}>
-            <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push('/help')}>
+            <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push({ pathname: '/help', params: isFirst ? { first: '1' } : {} })}>
               <Txt v="body14Tight">표현 찾기</Txt><AiBadge />
             </Pressable>
             <View style={styles.divider} />
-            <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push('/help')}>
+            <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push({ pathname: '/help', params: isFirst ? { first: '1' } : {} })}>
               <Txt v="body14Tight">다듬기</Txt><AiBadge />
             </Pressable>
           </View>
 
-          <Button label="보내기 전 확인" onPress={() => router.push('/letter/confirm')} />
+          {tooShort ? (
+            <View style={styles.minToast} accessibilityRole="alert">
+              <Txt v="body14Medium" color="light" style={{ lineHeight: undefined }}>{`조금만 더 써 보세요 · ${body.length}/${MIN_FIRST}`}</Txt>
+            </View>
+          ) : null}
+          <Button label="보내기 전 확인" disabled={tooShort} onPress={() => router.push('/letter/confirm')} />
         </ScrollView>
         <Image source={img.illPen} style={styles.illPen} contentFit="contain" accessibilityElementsHidden />
       </KeyboardAvoidingView>
@@ -89,5 +102,6 @@ const styles = StyleSheet.create({
   tools: { height: 48, flexDirection: 'row', alignItems: 'center', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.ink },
   tool: { flex: 1, height: 48, flexDirection: 'row', gap: 6, alignItems: 'center', justifyContent: 'center' },
   divider: { width: 1, height: 24, backgroundColor: colors.line },
+  minToast: { alignSelf: 'center', backgroundColor: colors.ink, paddingHorizontal: 16, paddingVertical: 10, marginBottom: -8 },
   illPen: { position: 'absolute', right: 24, top: 40, width: 64, height: 64 },
 });

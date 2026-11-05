@@ -1,5 +1,6 @@
 // MB05 친구별 기록 (v3) — Figma 284:5897
 import { router, useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { img } from '../../src/assets';
 import { Avatar, BackBar, Button, Icon, Rule, Screen, ZoneLabel } from '../../src/components/primitives';
@@ -12,10 +13,12 @@ export default function FriendLog() {
   const friend = friends.find((f) => f.id === id) ?? friends[0];
   const letters = friend.id === 'maya' ? lettersFromMaya : [];
   const months = [...new Set(letters.map((l) => l.month))];
+  const [menuOpen, setMenuOpen] = useState(false);
+  const go = (fn: () => void) => () => { setMenuOpen(false); fn(); };
 
   return (
     <Screen>
-      <BackBar showMore />
+      <BackBar showMore onMore={() => setMenuOpen((o) => !o)} />
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.head}>
           <Avatar source={friend.avatar} size={72} bg={friend.avatarBg} />
@@ -36,6 +39,12 @@ export default function FriendLog() {
             <Txt v="caption13" color="sub">2026년 8월부터 · 편지가 41,600km를 날았어요</Txt>
           </View>
         </View>
+
+        {friend.status === 'quiet' ? (
+          <Pressable accessibilityRole="button" onPress={() => router.push('/mailbox/archive')} style={{ minHeight: 44, justifyContent: 'center' }}>
+            <Txt v="meta12" color="sub">한 달째 조용해요 · 보관하기</Txt>
+          </Pressable>
+        ) : null}
 
         <ZoneLabel>이어 쓰는 중</ZoneLabel>
         <Pressable accessibilityRole="button" style={styles.draft} onPress={() => router.push(`/write/${friend.id}`)}>
@@ -77,6 +86,24 @@ export default function FriendLog() {
       <View style={styles.bottom}>
         <Button label="이어 쓰기" icon={img.penWrite} onPress={() => router.push(`/write/${friend.id}`)} />
       </View>
+      {menuOpen ? (
+        <>
+          <Pressable accessibilityLabel="메뉴 닫기" style={StyleSheet.absoluteFill} onPress={() => setMenuOpen(false)} />
+          {/* 더보기 메뉴 — Figma 269:883 */}
+          <View style={styles.menu}>
+            {[
+              { label: '보관하기', onPress: go(() => router.push('/mailbox/archive')) },
+              { label: '편지 마치기', onPress: go(() => router.push({ pathname: '/relation/end', params: { name: friend.name } })) },
+              { label: '이 친구 신고하기', onPress: go(() => router.push('/safety/report')) },
+              { label: '이 친구 차단하기', onPress: go(() => router.push('/safety/block')) },
+            ].map((m) => (
+              <Pressable key={m.label} accessibilityRole="menuitem" onPress={m.onPress} style={styles.menuItem}>
+                <Txt v="body14Medium" color="light" style={{ lineHeight: undefined }}>{m.label}</Txt>
+              </Pressable>
+            ))}
+          </View>
+        </>
+      ) : null}
     </Screen>
   );
 }
@@ -93,4 +120,6 @@ const styles = StyleSheet.create({
   logHead: { flexDirection: 'row', alignItems: 'flex-end', gap: 8 },
   countLabel: { flexDirection: 'row', alignItems: 'center', gap: 5, height: 16 },
   bottom: { paddingHorizontal: 24, paddingBottom: 18 },
+  menu: { position: 'absolute', right: 24, top: 88, width: 190, paddingVertical: 4, backgroundColor: colors.ink, shadowColor: '#000', shadowOpacity: 0.18, shadowRadius: 24, shadowOffset: { width: 0, height: 8 }, elevation: 10 },
+  menuItem: { height: 44, justifyContent: 'center', paddingLeft: 16 },
 });
