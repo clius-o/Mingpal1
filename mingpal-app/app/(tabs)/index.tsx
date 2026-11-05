@@ -10,6 +10,7 @@ import { friends, formatKm, type Friend } from '../../src/data/mock';
 import { colors } from '../../src/theme';
 
 const FILTERS = ['전체', '첫 편지 1', '초안', '보관'] as const;
+const FILTER_ROUTES = { '첫 편지 1': '/mailbox/first', 초안: '/mailbox/drafts', 보관: '/mailbox/archive' } as const;
 
 export default function Mailbox() {
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>('전체');
@@ -32,7 +33,7 @@ export default function Mailbox() {
         {arrived ? (
           <>
             <ZoneLabel>도착한 편지</ZoneLabel>
-            <Pressable accessibilityRole="button" style={styles.arrivedCard} onPress={() => router.push(`/letter/maya-4`)}>
+            <Pressable accessibilityRole="button" style={styles.arrivedCard} onPress={() => router.push('/letter/opening')}>
               <View style={styles.row12}>
                 <Avatar source={arrived.avatar} size={44} bg={arrived.avatarBg} />
                 <View style={{ flex: 1 }}>
@@ -53,7 +54,7 @@ export default function Mailbox() {
           <Txt v="meta12" color="sub">오늘 23:40</Txt>
         </Pressable>
 
-        <Pressable accessibilityRole="button" style={styles.memoRow}>
+        <Pressable accessibilityRole="button" style={styles.memoRow} onPress={() => router.push('/memo')}>
           <Icon source={img.pencil} size={18} />
           <Txt v="body14" color="sub">오늘 있었던 일을 한 줄 남겨 두세요</Txt>
         </Pressable>
@@ -61,7 +62,7 @@ export default function Mailbox() {
         <ZoneLabel>친구들</ZoneLabel>
         <View style={styles.filters}>
           {FILTERS.map((f) => (
-            <Pressable key={f} accessibilityRole="tab" accessibilityState={{ selected: filter === f }} onPress={() => setFilter(f)} style={styles.filter}>
+            <Pressable key={f} accessibilityRole="tab" accessibilityState={{ selected: filter === f }} onPress={() => { if (f === '전체') setFilter(f); else router.push(FILTER_ROUTES[f]); }} style={styles.filter}>
               <Txt v="body14" color={filter === f ? 'ink' : 'sub'}>{f}</Txt>
             </Pressable>
           ))}
@@ -93,7 +94,7 @@ function FriendRow({ friend }: { friend: Friend }) {
 
 function PostOfficeRow() {
   return (
-    <View style={styles.letterRow}>
+    <Pressable accessibilityRole="button" style={styles.letterRow} onPress={() => router.push('/letter/post')}>
       <View style={{ width: 64, height: 64 }} />
       <View style={{ flex: 1, gap: 4 }}>
         <View style={styles.rowBetween}>
@@ -103,7 +104,7 @@ function PostOfficeRow() {
         <Txt v="body14" color="ink2">오늘</Txt>
         <Txt v="meta12" color="sub">답장이 늦어도 괜찮아요. 기다리는 동안 해 볼 만한 것들을 적어 보냈어요.</Txt>
       </View>
-    </View>
+    </Pressable>
   );
 }
 

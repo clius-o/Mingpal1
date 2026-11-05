@@ -33,6 +33,8 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" />
         {/* AI help / feedback are sheets over the writing flow: tabs hidden (spec §10.1) */}
         <Stack.Screen name="help" options={{ presentation: 'transparentModal', animation: 'fade' }} />
+        <Stack.Screen name="translate" options={{ presentation: 'transparentModal', animation: 'fade' }} />
+        <Stack.Screen name="memo" options={{ presentation: 'transparentModal', animation: 'fade' }} />
         <Stack.Screen name="review" options={{ presentation: 'modal' }} />
       </Stack>
     </SafeAreaProvider>

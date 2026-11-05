@@ -65,7 +65,7 @@ export default function ReadLetter() {
 
       <View style={styles.bottom}>
         <View style={styles.tools}>
-          <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push('/help')}>
+          <Pressable accessibilityRole="button" style={styles.tool} onPress={() => router.push('/translate')}>
             <Txt v="body14Medium" style={{ lineHeight: undefined }}>영어로는?</Txt>
             <AiBadge />
           </Pressable>
