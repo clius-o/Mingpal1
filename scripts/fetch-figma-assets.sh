@@ -42,3 +42,11 @@ dl icon-chevron.svg      $B/89290cf5-7c1b-4262-95f6-fe6f701340ac.svg
 dl avatar-jiyoon.png    $B/9e96c41c-6afa-410e-9462-6ce6254c02e9.png
 dl avatar-lukas.png     $B/60b994a4-a294-4569-85df-aa345e917b1e.png
 dl ill-plus.png         $B/0e828a03-0fb7-497d-b791-1e2828760086.png
+dl ill-empty-inbox.png  $B/0b9626aa-c7f0-40f4-abf4-e90b2a6b591e.png
+dl ill-empty-first.png  $B/5bb63e0f-33dd-4eee-8e35-fb2c4e9a552b.png
+dl ill-empty-phrases.png $B/50ef7ae5-462f-4135-9933-60fdbc6a0260.png
+dl ill-empty-find.png   $B/bcd92cd1-b2b8-441b-92df-3562b81eaafd.png
+dl ill-empty-review.png $B/3e6f7c1f-22be-46b9-aac2-02a7aeed09a2.png
+dl ill-empty-memo.png   $B/280e59ea-295a-4516-baa5-a4da33c66532.png
+dl ill-notify.png       $B/524f0232-3e73-4b87-baeb-79a110852d3e.png
+dl avatar-daniel.png    $B/1d85983b-b5d3-4f1e-a6a4-d02c8b7be445.png

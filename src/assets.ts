@@ -28,6 +28,7 @@ export const img = {
   avatarAmara: require('../assets/figma/avatar-amara.png'),
   avatarKenji: require('../assets/figma/avatar-kenji.png'),
   avatarLukas: require('../assets/figma/avatar-lukas.png'),
+  avatarDaniel: require('../assets/figma/avatar-daniel.png'),
   avatarJiyoon: require('../assets/figma/avatar-jiyoon.png'),
   // letter art
   envelope: require('../assets/figma/envelope.png'),
@@ -36,6 +37,13 @@ export const img = {
   clipFront: require('../assets/figma/clip3-front.png'),
   postmark: require('../assets/figma/postmark.png'),
   illPlus: require('../assets/figma/ill-plus.png'),
+  illEmptyInbox: require('../assets/figma/ill-empty-inbox.png'),
+  illEmptyFirst: require('../assets/figma/ill-empty-first.png'),
+  illEmptyPhrases: require('../assets/figma/ill-empty-phrases.png'),
+  illEmptyFind: require('../assets/figma/ill-empty-find.png'),
+  illEmptyReview: require('../assets/figma/ill-empty-review.png'),
+  illEmptyMemo: require('../assets/figma/ill-empty-memo.png'),
+  illNotify: require('../assets/figma/ill-notify.png'),
   illPen: require('../assets/figma/ill-pen.png'),
   // stamps
   stampOlive: require('../assets/figma/stamp-olive.png'),

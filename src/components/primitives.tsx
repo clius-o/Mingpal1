@@ -109,13 +109,15 @@ const rowStyles = StyleSheet.create({
 });
 
 /** Sub-page header: BackBar + 28px title + head rule (+ optional right text action, e.g. 저장). */
-export function PageHeader({ title, action, onAction }: { title: string; action?: string; onAction?: () => void }) {
+export function PageHeader({ title, action, onAction, back = true }: { title: string; action?: string; onAction?: () => void; back?: boolean }) {
   return (
     <View>
       <View style={styles.backBar}>
-        <Pressable accessibilityRole="button" accessibilityLabel="뒤로" style={styles.touch} onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}>
-          <Icon source={img.back} />
-        </Pressable>
+        {back ? (
+          <Pressable accessibilityRole="button" accessibilityLabel="뒤로" style={styles.touch} onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}>
+            <Icon source={img.back} />
+          </Pressable>
+        ) : <View style={styles.touch} />}
         {action ? (
           <Pressable accessibilityRole="button" style={[styles.touch, { width: undefined, paddingHorizontal: 14 }]} onPress={onAction}>
             <Txt v="strong15">{action}</Txt>
@@ -213,4 +215,49 @@ export function SecondaryButton({ label, onPress, disabled, style }: { label: st
 /** Bottom action area: one or two buttons side by side. */
 export function FooterActions({ children }: { children: ReactNode }) {
   return <View style={{ flexDirection: 'row', gap: 12, paddingHorizontal: layout.screenPadding, paddingBottom: 16 }}>{children}</View>;
+}
+
+/** ES01 empty state: 190px illustration, title, sentence, optional action. Wording stays calm — never blames the user. */
+export function EmptyState({ illustration, title, body, actionLabel, onAction }: { illustration: ImageSource | number; title: string; body: string; actionLabel?: string; onAction?: () => void }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', paddingTop: 54 }}>
+      <Image source={illustration} style={{ width: 190, height: 190 }} contentFit="contain" />
+      <Txt v="maru18" style={{ marginTop: 24, textAlign: 'center' }}>{title}</Txt>
+      <Txt v="maru16" color="ink2" style={{ marginTop: 6, fontSize: 15, lineHeight: 22, textAlign: 'center' }}>{body}</Txt>
+      {actionLabel ? (
+        <View style={{ width: 200, marginTop: 34 }}>
+          <Button label={actionLabel} onPress={onAction} />
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
+/** SY02 offline / refresh-failed notice. Keeps the list below untouched and never auto-sends drafts. */
+export function OfflineBanner({ title = '연결되지 않았어요', body, onRetry }: { title?: string; body: string; onRetry?: () => void }) {
+  return (
+    <View style={{ backgroundColor: colors.card, borderWidth: 1, borderColor: colors.line, paddingHorizontal: 13, paddingTop: 11, gap: 3 }}>
+      <Txt v="strong14" style={{ lineHeight: 20 }}>{title}</Txt>
+      <Txt v="caption13" color="sub">{body}</Txt>
+      <Pressable accessibilityRole="button" onPress={onRetry} style={{ minHeight: 44, justifyContent: 'center', alignSelf: 'flex-start', paddingRight: 24 }}>
+        <Txt v="strong14" style={{ lineHeight: 20 }}>다시 시도</Txt>
+      </Pressable>
+    </View>
+  );
+}
+
+/** ES02 loading skeleton row: circle + two bars. Show structure only, never the empty-state copy while loading. */
+export function SkeletonRow({ label }: { label?: string }) {
+  return (
+    <View style={{ height: 88, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.line, borderRadius: 14, paddingHorizontal: 13, paddingTop: 6 }}>
+      {label ? <Txt v="meta12" color="sub" style={{ lineHeight: 22 }}>{label}</Txt> : null}
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 4 }}>
+        <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: colors.lineSoft }} />
+        <View style={{ gap: 8 }}>
+          <View style={{ width: 110, height: 10, borderRadius: 5, backgroundColor: colors.lineSoft }} />
+          <View style={{ width: 230, height: 10, borderRadius: 5, backgroundColor: colors.lineSoft }} />
+        </View>
+      </View>
+    </View>
+  );
 }
