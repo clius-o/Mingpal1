@@ -1,0 +1,56 @@
+# Builds the Expo web version (mingpal-app/) and publishes it to the gh-pages branch, which GitHub Pages serves.
+# Pages setting: Settings > Pages > Deploy from a branch > gh-pages / (root). Site: https://<owner>.github.io/<repo>/
+name: Deploy web to GitHub Pages
+
+on:
+  push:
+    branches: [main, claude/dazzling-bohr-v8thy6]
+    paths:
+      - 'mingpal-app/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+# Pushing to gh-pages needs write access to contents.
+permissions:
+  contents: write
+
+# One deploy at a time; a newer push replaces a running older one.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mingpal-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mingpal-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build web (base path = repository name)
+        env:
+          EXPO_BASE_URL: /${{ github.event.repository.name }}
+        run: npm run build:pages
+
+      - name: Publish to gh-pages
+        working-directory: mingpal-app/dist-pages
+        run: |
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy web build from ${GITHUB_SHA::7} (${GITHUB_REF_NAME})"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
