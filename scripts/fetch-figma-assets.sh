@@ -38,3 +38,7 @@ dl radio-on.svg         $B/726508e8-5204-4456-ae09-fccc36d1d0ce.svg
 dl radio-on-dot.svg     $B/fcf8136e-3879-49af-8062-c4bce03d5e44.svg
 dl radio-off.svg        $B/5967d4bd-8a3f-4a30-a577-0cb76320641e.svg
 dl icon-undo.svg        $B/2a7ac586-cb54-4578-b426-b07fe2ad9ca5.svg
+dl icon-chevron.svg      $B/89290cf5-7c1b-4262-95f6-fe6f701340ac.svg
+dl avatar-jiyoon.png    $B/9e96c41c-6afa-410e-9462-6ce6254c02e9.png
+dl avatar-lukas.png     $B/60b994a4-a294-4569-85df-aa345e917b1e.png
+dl ill-plus.png         $B/0e828a03-0fb7-497d-b791-1e2828760086.png

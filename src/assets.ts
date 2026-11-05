@@ -6,6 +6,7 @@ export const img = {
   back: require('../assets/figma/icon-back.svg'),
   more: require('../assets/figma/icon-more.svg'),
   close: require('../assets/figma/icon-close.svg'),
+  chevron: require('../assets/figma/icon-chevron.svg'), // points left; rotate 180° for "go" rows
   pencil: require('../assets/figma/icon-pencil.svg'),
   pen: require('../assets/figma/icon-pen.svg'),
   penWrite: require('../assets/figma/icon-pen-write.svg'),
@@ -26,12 +27,15 @@ export const img = {
   avatarLena: require('../assets/figma/avatar-lena.png'),
   avatarAmara: require('../assets/figma/avatar-amara.png'),
   avatarKenji: require('../assets/figma/avatar-kenji.png'),
+  avatarLukas: require('../assets/figma/avatar-lukas.png'),
+  avatarJiyoon: require('../assets/figma/avatar-jiyoon.png'),
   // letter art
   envelope: require('../assets/figma/envelope.png'),
   sheet: require('../assets/figma/sheet.png'),
   clipBack: require('../assets/figma/clip3-back.png'),
   clipFront: require('../assets/figma/clip3-front.png'),
   postmark: require('../assets/figma/postmark.png'),
+  illPlus: require('../assets/figma/ill-plus.png'),
   illPen: require('../assets/figma/ill-pen.png'),
   // stamps
   stampOlive: require('../assets/figma/stamp-olive.png'),

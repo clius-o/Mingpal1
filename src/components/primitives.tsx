@@ -91,3 +91,98 @@ const styles = StyleSheet.create({
   newBadge: { flexDirection: 'row', gap: 5, alignItems: 'center' },
   aiBadge: { minHeight: 20, paddingHorizontal: 6, paddingVertical: 2, borderWidth: 1, borderStyle: 'dashed', borderColor: colors.sub, borderRadius: 3, alignItems: 'center', justifyContent: 'center' },
 });
+
+/** Settings list row: label (+ optional value) and a right chevron. 55px rows with a hairline (ME01). */
+export function SettingsRow({ label, value, onPress, danger, hideChevron }: { label: string; value?: string; onPress?: () => void; danger?: boolean; hideChevron?: boolean }) {
+  return (
+    <Pressable accessibilityRole="button" onPress={onPress} style={rowStyles.row}>
+      <Txt v="maru16" color={danger ? 'red' : 'ink'} style={rowStyles.label}>{label}</Txt>
+      {value ? <Txt v="caption13" color="sub">{value}</Txt> : null}
+      {hideChevron ? null : <Icon source={img.chevron} style={{ transform: [{ rotate: '180deg' }] }} />}
+    </Pressable>
+  );
+}
+
+const rowStyles = StyleSheet.create({
+  row: { minHeight: 55, flexDirection: 'row', alignItems: 'center', gap: 8, borderBottomWidth: 1, borderBottomColor: colors.line },
+  label: { flex: 1 },
+});
+
+/** Sub-page header: BackBar + 28px title + head rule (+ optional right text action, e.g. 저장). */
+export function PageHeader({ title, action, onAction }: { title: string; action?: string; onAction?: () => void }) {
+  return (
+    <View>
+      <View style={styles.backBar}>
+        <Pressable accessibilityRole="button" accessibilityLabel="뒤로" style={styles.touch} onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}>
+          <Icon source={img.back} />
+        </Pressable>
+        {action ? (
+          <Pressable accessibilityRole="button" style={[styles.touch, { width: undefined, paddingHorizontal: 14 }]} onPress={onAction}>
+            <Txt v="strong15">{action}</Txt>
+          </Pressable>
+        ) : null}
+      </View>
+      <View style={{ paddingHorizontal: layout.screenPadding, gap: 8, marginTop: 4 }}>
+        <Txt v="title">{title}</Txt>
+        <Rule />
+      </View>
+    </View>
+  );
+}
+
+/** mp2 toggle, 48x28, 44px touch target. */
+export function Toggle({ value, onValueChange, label }: { value: boolean; onValueChange: (v: boolean) => void; label: string }) {
+  return (
+    <Pressable accessibilityRole="switch" accessibilityLabel={label} accessibilityState={{ checked: value }} onPress={() => onValueChange(!value)} style={{ width: 48, height: 44, justifyContent: 'center' }}>
+      <View style={{ width: 48, height: 28, borderRadius: 14, backgroundColor: value ? colors.ink : colors.lineMid, justifyContent: 'center', paddingHorizontal: 3 }}>
+        <View style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: value ? colors.light : colors.card, alignSelf: value ? 'flex-end' : 'flex-start' }} />
+      </View>
+    </Pressable>
+  );
+}
+
+/** Row with a title (+ optional description) and a toggle on the right. */
+export function ToggleRow({ label, desc, value, onValueChange }: { label: string; desc?: string; value: boolean; onValueChange: (v: boolean) => void }) {
+  return (
+    <View style={[rowStyles.row, { paddingVertical: 8, alignItems: 'flex-start' }]}>
+      <View style={{ flex: 1, gap: 2, paddingTop: 4, paddingRight: 24 }}>
+        <Txt v="maru16">{label}</Txt>
+        {desc ? <Txt v="caption13" color="sub">{desc}</Txt> : null}
+      </View>
+      <Toggle value={value} onValueChange={onValueChange} label={label} />
+    </View>
+  );
+}
+
+/** Radio-style row (ME05 "바로 받기"): ink dot when selected. */
+export function RadioRow({ label, value, selected, onPress }: { label: string; value?: string; selected: boolean; onPress?: () => void }) {
+  return (
+    <Pressable accessibilityRole="radio" accessibilityState={{ selected }} onPress={onPress} style={[rowStyles.row, { gap: 12 }]}>
+      <View style={{ width: 18, height: 18, borderRadius: 9, borderWidth: 1, borderColor: selected ? colors.ink : colors.lineStrong, backgroundColor: selected ? colors.ink : 'transparent' }} />
+      <Txt v="maru16" style={rowStyles.label}>{label}</Txt>
+      {value ? <Txt v="caption13" color="sub">{value}</Txt> : null}
+      {value ? <Icon source={img.chevron} style={{ transform: [{ rotate: '180deg' }] }} /> : null}
+    </Pressable>
+  );
+}
+
+/** Small grey section label (Pretendard SemiBold 12). */
+export function SectionLabel({ children }: { children: string }) {
+  return <Txt v="meta12Strong" color="sub" style={{ marginTop: 16, marginBottom: 4 }}>{children}</Txt>;
+}
+
+/** Grey 13px explanatory note under a list. */
+export function Note({ children }: { children: string }) {
+  return <Txt v="caption13" color="sub" style={{ marginTop: 16 }}>{children}</Txt>;
+}
+
+/** Secondary (outlined) small button, e.g. 차단 해제. 44px touch target. */
+export function SmallButton({ label, onPress }: { label: string; onPress?: () => void }) {
+  return (
+    <Pressable accessibilityRole="button" onPress={onPress} style={{ minHeight: 44, justifyContent: 'center' }}>
+      <View style={{ height: 36, paddingHorizontal: 14, justifyContent: 'center', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.line }}>
+        <Txt v="body14Medium">{label}</Txt>
+      </View>
+    </Pressable>
+  );
+}

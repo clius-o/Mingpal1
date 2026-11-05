@@ -52,3 +52,6 @@ export const inesProfile = {
 };
 
 export const formatKm = (n: number) => `${n.toLocaleString('en-US')}km`;
+
+// ME10: Figma shows the placeholder "[이메일]"; replace with the signed-in user's email once auth exists.
+export const account = { email: 'jiyoon@example.com' };
