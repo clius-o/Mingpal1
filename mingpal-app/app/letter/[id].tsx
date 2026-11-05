@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { img } from '../../src/assets';
 import { AiBadge, BackBar, Button, Screen } from '../../src/components/primitives';
+import { ClipBack, ClipFront } from '../../src/components/PaperClip';
 import { Txt } from '../../src/components/Txt';
 import { getLetter, type LetterModel } from '../../src/data/letters';
 import { useLocale } from '../../src/i18n';
@@ -34,7 +35,9 @@ function LetterView({ letter }: { letter: LetterModel }) {
       <ScrollView contentContainerStyle={styles.scroll}>
         <Image source={img.envelope} style={styles.envelope} contentFit="contain" accessibilityElementsHidden />
         <View style={styles.sheetWrap}>
+          <ClipBack />
           <Image source={img.sheet} style={StyleSheet.absoluteFill} contentFit="fill" />
+          <ClipFront />
           <Image source={img.stampOliveLetter} style={styles.stamp} contentFit="contain" />
           <Image source={img.postmark} style={styles.postmark} contentFit="cover" />
           <View style={styles.postmarkText}>

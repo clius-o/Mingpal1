@@ -5,6 +5,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { img } from '../../src/assets';
 import { BackBar, Button, Screen, SecondaryButton } from '../../src/components/primitives';
+import { ClipBack, ClipFront } from '../../src/components/PaperClip';
 import { Txt } from '../../src/components/Txt';
 import { getSendPreview } from '../../src/data/letters';
 import { useLocale } from '../../src/i18n';
@@ -28,7 +29,9 @@ export default function ConfirmSend() {
       <ScrollView contentContainerStyle={styles.scroll}>
         <Image source={img.envelope} style={styles.envelope} contentFit="contain" accessibilityElementsHidden />
         <View style={styles.sheetWrap}>
+          <ClipBack />
           <Image source={img.sheet} style={StyleSheet.absoluteFill} contentFit="fill" />
+          <ClipFront />
           <Image source={img.stampSeoul} style={styles.stamp} contentFit="cover" />
           <View style={styles.inner}>
             <View style={{ gap: 4 }}>

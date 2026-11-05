@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { img } from '../../src/assets';
 import { BackBar, Button, Screen } from '../../src/components/primitives';
+import { ClipBack, ClipFront } from '../../src/components/PaperClip';
 import { Txt } from '../../src/components/Txt';
 import { colors } from '../../src/theme';
 
@@ -15,7 +16,9 @@ export default function PostOfficeLetter() {
       <BackBar />
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.sheetWrap}>
+          <ClipBack />
           <Image source={img.sheet} style={StyleSheet.absoluteFill} contentFit="fill" />
+          <ClipFront />
           <Image source={img.postmark} style={styles.postmark} contentFit="cover" />
           <View style={styles.postmarkText}>
             <Txt v="meta12Medium" color="sub" style={{ fontSize: 10, lineHeight: 13, textAlign: 'center', letterSpacing: 0.6 }}>밍팔</Txt>

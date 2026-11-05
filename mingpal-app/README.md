@@ -11,7 +11,7 @@
 | LR01 배움 홈 | `app/(tabs)/learn.tsx` | 284:6167 | 코드 완료 |
 | MB05 친구별 기록 | `app/friend/[id].tsx` | 284:5897 | 코드 완료 |
 | FD03 친구 소개 | `app/profile/[id].tsx` | 284:5957 | 코드 완료 |
-| LT01 편지 읽기 | `app/letter/[id].tsx` | 284:5833 | 코드 완료 (클립 이미지 미배치) |
+| LT01 편지 읽기 | `app/letter/[id].tsx` | 284:5833 | 코드 완료 (클립 배치 완료 — `PaperClip`) |
 | LT02 편지 쓰기 | `app/write/[id].tsx` | 284:6014 | 코드 완료 |
 | AI01 AI 도움 시트 | `app/help.tsx` | 284:6053 | 코드 완료 |
 | AI03 나만 보는 첨삭 | `app/review.tsx` | 284:6125 | 코드 완료 |
@@ -32,11 +32,11 @@
 | LT03 전송 실패·결과 불명 · LT04 첫 교류 | `app/letter/confirm.tsx?state=`, `app/letter/sent.tsx?kind=first-exchange` | 277:3555 / 3606 / 3713 | 코드 완료 |
 | 영어 UI(Maya 시점) ON01·MB02·LT01·LT03·AI02 | `src/i18n.tsx` + 각 화면, 설정 › 언어 설정 › 앱 화면 언어 | 279:3752–3902 | 코드 완료 |
 
-> "코드 완료"는 타입체크(`npx tsc --noEmit`)와 더미 에셋을 채운 웹 번들(`expo export`)·레이아웃 스크린샷 확인까지만 했습니다. 실제 Figma 에셋을 받은 뒤의 화면 비교와 기기 실행은 아직입니다.
+> 핵심 8화면(MB01·LT01·MB05·FD03·LT02·AI01·AI03·LR01)은 실제 Figma 에셋을 채운 웹 번들(`expo export`)을 브라우저로 열어 Figma 스크린샷과 나란히 비교했습니다(구조·간격 일치, 웹은 상태바 영역이 없어 전체가 46px 위에 그려짐). 나머지 화면은 타입체크(`npx tsc --noEmit`)와 번들·스크린샷 확인까지만 했고, 실기기(iOS/Android) 실행은 아직 하지 않았습니다.
 
 ## 실행 전에 필요한 것
 
-1. **Figma 에셋 받기** — `scripts/fetch-figma-assets.sh` (www.figma.com 접근 필요, URL은 2026-11-05 발급·7일 유효).
+1. **Figma 에셋** — `assets/figma/`에 64개(약 17MB)가 커밋돼 있어 바로 실행됩니다. 다시 받으려면 `scripts/fetch-figma-assets.sh` (www.figma.com 접근 필요, URL은 2026-11-05 발급·7일 유효 → 만료되면 Figma MCP `get_design_context`로 URL을 새로 받아 스크립트를 고치세요).
    이 파일이 없으면 번들링이 실패합니다(`src/assets.ts`가 `assets/figma/*`를 require).
 2. `npm install` → `npx expo start`
 3. 가입 흐름은 `/onboarding`, 빈·시스템 상태는 `/states/inbox` 등으로 직접 열어 볼 수 있습니다(로그인·라우팅 연결 전).
