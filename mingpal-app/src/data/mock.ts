@@ -101,3 +101,31 @@ export type ReviewCard = { id: string; source: string; ask: string; ko: string; 
 export const reviewDeck: ReviewCard[] = [
   { id: 'r1', source: '첨삭에서 · 10월 25일 Maya에게 보낸 편지', ask: '이 말을 영어로 쓴다면?', ko: '가족 모두와 김치를 담갔어요.', firstAttempt: 'We made kimchi with whole family.', answer: { before: 'We made kimchi with ', hit: 'the whole family', after: '.' }, explain: '‘whole family’ 앞에는 the가 필요해요.' },
 ];
+
+// LT03 confirm-before-send preview (Jiyun → Maya)
+export const sendPreview = [
+  'Hi Maya,',
+  'Thank you for your letter. I loved the picture of you sitting by the window in the rain.',
+  'You asked about a small routine that makes me feel at home. On Sunday evenings, I cook with my daughter. Last week we made a mess, but that made it even more fun.',
+  'Jiyun',
+];
+
+// ST01 stamp pictures: unlocked ones can be picked; locked ones show how they open (no buying — spec §5.3)
+export const stampPictures = [
+  { id: 'default', label: '기본', source: img.stampThumbDefault },
+  { id: 'paper', label: '편지지', source: img.stampThumbPaper },
+  { id: 'postbox', label: '우체통', source: img.stampThumbPostbox },
+  { id: 'sprout', label: '새싹', source: img.stampThumbSprout, locked: '편지 4통' },
+  { id: 'cloud', label: '구름', source: img.stampThumbCloud, locked: '새로운 나라 친구의 첫 편지' },
+  { id: 'star', label: '별', source: img.stampThumbStar, locked: '편지 10통' },
+  { id: 'wave', label: '물결', source: img.stampThumbWave, locked: '친구 3명' },
+  { id: 'house', label: '작은 집', source: img.stampThumbHouse, locked: '써 본 표현 10개' },
+] as const;
+
+// ST02 commemorative postmarks
+export const postmarkKinds = [
+  { id: 'p4', mark: '4', title: '첫 기념 소인', rule: '처음 4통을 주고받으면' },
+  { id: 'p12', mark: '12', title: '두 번째 소인', rule: '12통을 넘기면' },
+  { id: 'p30', mark: '30', title: '세 번째 소인', rule: '30통을 넘기면' },
+  { id: 'p1y', mark: '1년', title: '같은 날 찍히는 소인', rule: '처음 편지를 보낸 지 1년이 되면' },
+] as const;

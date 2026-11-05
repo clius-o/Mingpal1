@@ -62,3 +62,12 @@ dl avatar-b2.png            $B/e50e7ff5-f869-4158-b170-70b212088811.png
 dl avatar-b3.png            $B/d109a859-53b2-4512-b174-9137d5d0b544.png
 dl avatar-b4.png            $B/5691dbdf-4635-4139-96d8-2b2680dc3193.png
 dl ill-mail.png         $B/d6ae2055-b486-489d-9d46-3d0308519a8c.png
+dl stamp-thumb-default.png    $B/7afefcf3-00fe-4e18-8b2a-fa0b601b0bbe.png
+dl stamp-thumb-paper.png      $B/1b22f9ef-dd7c-4603-99b4-20e189acc7ad.png
+dl stamp-thumb-postbox.png    $B/d5f7bf74-b69f-401b-b48e-7870b1621103.png
+dl stamp-thumb-sprout.png     $B/3f8906ad-c250-4b82-9a3d-39db05f62d2b.png
+dl stamp-thumb-cloud.png      $B/9c9e91ba-554a-4cc4-85d1-9032f46ce8cb.png
+dl stamp-thumb-star.png       $B/e73c68ef-d684-431f-b33b-7eb0c89c1f36.png
+dl stamp-thumb-wave.png       $B/33072a4a-778d-4b14-a678-1a9e49cd1bee.png
+dl stamp-thumb-house.png      $B/d2aa3862-23c1-4ef6-b98e-013591b47491.png
+dl envelope-sent.png          $B/77131695-7ff0-435b-9657-3c89b0c806bd.png

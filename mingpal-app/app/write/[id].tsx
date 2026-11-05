@@ -70,7 +70,7 @@ export default function WriteLetter() {
             </Pressable>
           </View>
 
-          <Button label="보내기 전 확인" onPress={() => router.push('/review')} />
+          <Button label="보내기 전 확인" onPress={() => router.push('/letter/confirm')} />
         </ScrollView>
         <Image source={img.illPen} style={styles.illPen} contentFit="contain" accessibilityElementsHidden />
       </KeyboardAvoidingView>
