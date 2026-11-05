@@ -41,6 +41,14 @@
 2. `npm install` → `npx expo start`
 3. 가입 흐름은 `/onboarding`, 빈·시스템 상태는 `/states/inbox` 등으로 직접 열어 볼 수 있습니다(로그인·라우팅 연결 전).
 
+## 웹 사이트 (GitHub Pages)
+
+- 주소: https://clius-o.github.io/Mingpal1/ (저장소 Settings › Pages › Source를 **Deploy from a branch**, 브랜치 `gh-pages` / `/ (root)`로 한 번 설정해야 켜집니다)
+- 로컬에서 빌드: `npm run build:pages` → `dist-pages/` (하위 경로 `/Mingpal1` 기준, `404.html`·`.nojekyll` 포함). 다른 경로로 쓰려면 `EXPO_BASE_URL=/다른경로` 환경 변수.
+- 배포: `dist-pages/`의 내용을 `gh-pages` 브랜치 루트에 올립니다. 앱 코드가 바뀌면 다시 빌드해서 올려야 갱신됩니다.
+- 웹 버전은 디자인 검토용 목 데이터 프로토타입입니다(로그인·서버·AI 없음). 데스크톱에서는 폰 폭(430px)으로 가운데 표시됩니다.
+- 하위 경로 설정은 `app.config.js`가 `EXPO_BASE_URL`이 있을 때만 `experiments.baseUrl`로 넣기 때문에 로컬 개발·네이티브 빌드에는 영향이 없습니다.
+
 ## 알려 둔 사항
 
 - 데이터는 `src/data/mock.ts`의 샘플입니다. 서버(Supabase)·로그인·AI는 아직 없습니다.
