@@ -186,3 +186,31 @@ export function SmallButton({ label, onPress }: { label: string; onPress?: () =>
     </Pressable>
   );
 }
+
+/** "· text" list used on confirmation screens (ME09, SF02, SF03). */
+export function Bullets({ items }: { items: string[] }) {
+  return (
+    <View style={{ gap: 10 }}>
+      {items.map((t) => (
+        <View key={t} style={{ flexDirection: 'row', gap: 10 }}>
+          <Txt v="strong15" color="sub" style={{ lineHeight: 24 }}>·</Txt>
+          <Txt v="maru16" color="ink2" style={{ flex: 1, fontSize: 15, lineHeight: 24 }}>{t}</Txt>
+        </View>
+      ))}
+    </View>
+  );
+}
+
+/** Outlined 52px button (mp2/Button style=Secondary). */
+export function SecondaryButton({ label, onPress, disabled, style }: { label: string; onPress?: () => void; disabled?: boolean; style?: StyleProp<ViewStyle> }) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityState={{ disabled }} disabled={disabled} onPress={onPress} style={[{ height: 52, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.card, borderWidth: 1, borderColor: colors.line }, disabled && { opacity: 0.35 }, style]}>
+      <Txt v="strong15">{label}</Txt>
+    </Pressable>
+  );
+}
+
+/** Bottom action area: one or two buttons side by side. */
+export function FooterActions({ children }: { children: ReactNode }) {
+  return <View style={{ flexDirection: 'row', gap: 12, paddingHorizontal: layout.screenPadding, paddingBottom: 16 }}>{children}</View>;
+}
