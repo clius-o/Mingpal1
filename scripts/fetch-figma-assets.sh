@@ -50,3 +50,15 @@ dl ill-empty-review.png $B/3e6f7c1f-22be-46b9-aac2-02a7aeed09a2.png
 dl ill-empty-memo.png   $B/280e59ea-295a-4516-baa5-a4da33c66532.png
 dl ill-notify.png       $B/524f0232-3e73-4b87-baeb-79a110852d3e.png
 dl avatar-daniel.png    $B/1d85983b-b5d3-4f1e-a6a4-d02c8b7be445.png
+dl avatar-a1.png            $B/97ae8ea2-31ea-4bc1-928a-5a52d9d894a6.png
+dl avatar-a2.png            $B/8d576397-27f2-454c-bd07-03422e37cba4.png
+dl avatar-a3.png            $B/c42dffed-4099-464e-8800-f87b10716917.png
+dl avatar-a4.png            $B/029b29bf-7a90-4a1a-862d-bee6988fabdc.png
+dl avatar-a5.png            $B/c2383760-5356-4065-a4c7-47933c6436dc.png
+dl avatar-a6.png            $B/de3805ef-e4a8-451a-83a5-ba61658f1ec9.png
+dl avatar-a8.png            $B/8a170485-b8d9-4af7-a0a8-a2ce43a16b29.png
+dl avatar-b1.png            $B/6afa438d-740b-4a26-b8d6-c469fd762ff8.png
+dl avatar-b2.png            $B/e50e7ff5-f869-4158-b170-70b212088811.png
+dl avatar-b3.png            $B/d109a859-53b2-4512-b174-9137d5d0b544.png
+dl avatar-b4.png            $B/5691dbdf-4635-4139-96d8-2b2680dc3193.png
+dl ill-mail.png         $B/d6ae2055-b486-489d-9d46-3d0308519a8c.png

@@ -55,3 +55,17 @@ export const formatKm = (n: number) => `${n.toLocaleString('en-US')}km`;
 
 // ME10: Figma shows the placeholder "[이메일]"; replace with the signed-in user's email once auth exists.
 export const account = { email: 'jiyoon@example.com' };
+
+// ON09 avatar set (A/B series). a7 is the sample user's avatar.
+export const avatarChoices = [
+  { id: 'a1', source: img.avatarA1 }, { id: 'a2', source: img.avatarA2 }, { id: 'a3', source: img.avatarA3 }, { id: 'a4', source: img.avatarA4 },
+  { id: 'a5', source: img.avatarA5 }, { id: 'a6', source: img.avatarA6 }, { id: 'a7', source: img.avatarJiyoon }, { id: 'a8', source: img.avatarA8 },
+  { id: 'b1', source: img.avatarB1 }, { id: 'b2', source: img.avatarB2 }, { id: 'b3', source: img.avatarB3 }, { id: 'b4', source: img.avatarB4 },
+];
+
+// ON08 first recommendations
+export const firstRecommendations = [
+  { id: 'ines', quote: '“토요일 아침마다 시장에서 처음 보는 과일을 하나씩 사 봐요.”', english: false, name: 'Inés', meta: '발렌시아 9,900km · 교환 편지', avatar: img.avatarA3 },
+  { id: 'tom', quote: '“I fix old bikes in my garage on rainy evenings.”', english: true, name: 'Tom', meta: '브리스톨 9,000km · 영어 편지', avatar: img.avatarA4 },
+  { id: 'hanh', quote: '“After work I study English at a small café near the lake.”', english: true, name: 'Hanh', meta: '하노이 2,700km · 영어 편지', avatar: img.avatarA1 },
+];

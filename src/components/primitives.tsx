@@ -109,7 +109,7 @@ const rowStyles = StyleSheet.create({
 });
 
 /** Sub-page header: BackBar + 28px title + head rule (+ optional right text action, e.g. 저장). */
-export function PageHeader({ title, action, onAction, back = true }: { title: string; action?: string; onAction?: () => void; back?: boolean }) {
+export function PageHeader({ title, action, onAction, back = true, step, hideTitle }: { title: string; action?: string; onAction?: () => void; back?: boolean; step?: number; hideTitle?: boolean }) {
   return (
     <View>
       <View style={styles.backBar}>
@@ -124,10 +124,24 @@ export function PageHeader({ title, action, onAction, back = true }: { title: st
           </Pressable>
         ) : null}
       </View>
-      <View style={{ paddingHorizontal: layout.screenPadding, gap: 8, marginTop: 4 }}>
-        <Txt v="title">{title}</Txt>
-        <Rule />
-      </View>
+      {step ? <OnboardingProgress step={step} /> : null}
+      {hideTitle ? null : (
+        <View style={{ paddingHorizontal: layout.screenPadding, gap: 8, marginTop: 4 }}>
+          <Txt v="title">{title}</Txt>
+          <Rule />
+        </View>
+      )}
+    </View>
+  );
+}
+
+/** Progress segments drawn inside the header row (see Progress in onboarding.tsx). */
+function OnboardingProgress({ step }: { step: number }) {
+  return (
+    <View pointerEvents="none" style={{ position: 'absolute', left: 64, right: 48, top: 22, flexDirection: 'row', gap: 4 }}>
+      {Array.from({ length: 7 }, (_, i) => (
+        <View key={i} style={{ flex: 1, height: 3, backgroundColor: i < step ? colors.ink : colors.line }} />
+      ))}
     </View>
   );
 }
